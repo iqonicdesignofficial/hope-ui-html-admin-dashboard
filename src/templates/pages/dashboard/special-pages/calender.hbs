@@ -1,0 +1,38 @@
+
+{{#extend layout title="special-calender"  active="special-calender" path="../../" }}
+    {{#content "head" }}
+        <!-- Fullcalender CSS -->
+        <link rel='stylesheet' href='{{path}}assets/vendor/fullcalendar/core/main.css' />
+        <link rel='stylesheet' href='{{path}}assets/vendor/fullcalendar/daygrid/main.css' />
+        <link rel='stylesheet' href='{{path}}assets/vendor/fullcalendar/timegrid/main.css' />
+        <link rel='stylesheet' href='{{path}}assets/vendor/fullcalendar/list/main.css' />
+    {{/content}}
+    {{#content "scripts" }}
+        <!-- Fullcalender Javascript -->
+        <script src='{{path}}assets/vendor/fullcalendar/core/main.js'></script>
+        <script src='{{path}}assets/vendor/fullcalendar/daygrid/main.js'></script>
+        <script src='{{path}}assets/vendor/fullcalendar/timegrid/main.js'></script>
+        <script src='{{path}}assets/vendor/fullcalendar/list/main.js'></script>
+        <script src='{{path}}assets/vendor/fullcalendar/interaction/main.js'></script>
+        <script src='{{path}}assets/vendor/moment.min.js'></script>
+        <script src='{{path}}assets/js/plugins/calender.js'></script>
+    {{/content}}
+    {{#content "content"}}
+        <div>
+            {{> partials/components/header-breadcrumb title="Calender" }}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card  ">
+                                <div class="card-body">
+                                    <div id="calendar1" class="calendar-s"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/content}}
+{{/extend}}

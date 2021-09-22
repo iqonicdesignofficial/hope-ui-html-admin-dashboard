@@ -1,0 +1,36 @@
+{{!-- layouts/layout.hbs --}}
+
+<!doctype html>
+<html lang="en" dir="{{#compare dir '==' 'true'}}rtl{{else}}ltr{{/compare}}">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>{{ appName }} | Responsive Bootstrap 5 Admin Dashboard Template</title>
+      {{> partials/dashboard/head }}
+      {{#block "head"}}
+        {{!-- External page head section--}}
+      {{/block}}
+  </head>
+  <body class=" {{bodyClass}} {{#compare dark '===' 'true'}} dark {{/compare}}">
+    <span class="screen-darken"></span>
+    <!-- loader Start -->
+    <div id="loading">
+      {{> partials/dashboard/loader }}
+    </div>
+    <!-- loader END -->
+    <main class="main-content">
+      <!--Nav Start-->
+      {{> partials/dashboard/header-style-3 }}
+      <!--Nav End-->
+      <div class="conatiner-fluid content-inner pb-0">
+        {{#block "content"}}
+        {{/block}}
+      </div>
+      {{> partials/dashboard/footer }}
+    </main>
+    <!-- Wrapper End-->
+    {{> partials/dashboard/scripts }}
+    {{#block "scripts"}}
+    {{/block}}
+  </body>
+</html>
