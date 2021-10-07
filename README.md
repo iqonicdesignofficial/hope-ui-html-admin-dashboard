@@ -5,11 +5,10 @@
   </a>
 </p>
 <p align="center">
-<a href="https://github.com/iqonicdesignofficial/hope-ui-design-system/" target="__blank"><img src="https://img.shields.io/github/stars/iqonicdesignofficial/hope-ui-design-system" /> </a>
-<a href="https://github.com/iqonicdesignofficial/hope-ui-design-system/network" target="__blank"><img src="https://img.shields.io/github/forks/iqonicdesignofficial/hope-ui-design-system" /> </a>
-<a href="https://github.com/iqonicdesignofficial/hope-ui-design-system/issues" target="__blank"><img src="https://img.shields.io/github/issues/iqonicdesignofficial/hope-ui-design-system" /> </a>
-<a href="#" target="__blank"><img src="https://img.shields.io/bower/v/editor.md.svg" /> </a>
-<a href="https://github.com/iqonicdesignofficial/hope-ui-design-system/blob/main/LICENSE" target="__blank"><img src="https://img.shields.io/github/license/iqonicdesignofficial/hope-ui-design-system" /> </a>
+<a href="https://github.com/iqonicdesignofficial/hope-ui-html-admin-dashboard/" target="__blank"><img src="https://img.shields.io/github/stars/iqonicdesignofficial/hope-ui-html-admin-dashboard" /> </a>
+<a href="https://github.com/iqonicdesignofficial/hope-ui-html-admin-dashboard/network" target="__blank"><img src="https://img.shields.io/github/forks/iqonicdesignofficial/hope-ui-html-admin-dashboard" /> </a>
+<a href="https://github.com/iqonicdesignofficial/hope-ui-html-admin-dashboard/issues" target="__blank"><img src="https://img.shields.io/github/issues/iqonicdesignofficial/hope-ui-html-admin-dashboard" /> </a>
+<a href="https://github.com/iqonicdesignofficial/hope-ui-html-admin-dashboard/blob/main/LICENSE" target="__blank"><img src="https://img.shields.io/github/license/iqonicdesignofficial/hope-ui-html-admin-dashboard" /> </a>
 <a href="https://twitter.com/iqonicdesign" target="__blank"><img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fiqonicdesign" /></a>
 </p>
 <h3 align="center">Free Open Source Bootstrap 5 Design System.</h3>
@@ -97,11 +96,11 @@ You can use following method to get started with CSS and JS files of the design 
 [Download from Iqonic Design](https://iqonic.design/product/admin-templates/hope-ui-admin-free-open-source-bootstrap-admin-template/?utm_source=github&utm_medium=github-description&utm_campaign=open_source_github)
 ### Method 2: Using CDN
 ```
-<link href="https://cdn.jsdelivr.net/gh/iqonicdesignofficial/hope-ui-design-system@main/dist/assets/css/hope-ui.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/iqonicdesignofficial/hope-ui-html-admin-dashboard@main/dist/assets/css/hope-ui.min.css" rel="stylesheet"/>
 ```
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/iqonicdesignofficial/hope-ui-design-system@main/dist/assets/js/hope-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/iqonicdesignofficial/hope-ui-html-admin-dashboard@main/dist/assets/js/hope-ui.js"></script>
 ```
 ### Method 3: Using NPM
 Start working with the design system
@@ -168,7 +167,7 @@ github/hope-ui-admin-dashboard/
     │        │     ├── kanban/
     │        │     ├── pricing/
     │        │     └── ui-kit/
-    │        ├── hope-ui-design-system
+    │        ├── hope-ui-html-admin-dashboard
     │        │     ├── components/
     │        │     ├── helper/
     │        │     ├── layout-style/
