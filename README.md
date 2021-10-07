@@ -167,7 +167,7 @@ github/hope-ui-admin-dashboard/
     │        │     ├── kanban/
     │        │     ├── pricing/
     │        │     └── ui-kit/
-    │        ├── hope-ui-html-admin-dashboard
+    │        ├── hope-ui-design-system
     │        │     ├── components/
     │        │     ├── helper/
     │        │     ├── layout-style/
