@@ -160,6 +160,15 @@ github/hope-ui-admin-dashboard/
     │        │     ├── kanban/
     │        │     ├── pricing/
     │        │     └── ui-kit/
+    |        ├──customizer
+    │        │     ├── components/
+    │        │     ├── layout/
+    │        │     ├── menu-style/
+    │        │     ├── utillities/
+    │        │     ├── components.scss
+    │        │     ├── dark.scss
+    │        │     ├── root.scss
+    │        │     └── variables.scss
     │        ├── hope-ui-design-system
     │        │     ├── components/
     │        │     ├── helper/
@@ -186,6 +195,7 @@ github/hope-ui-admin-dashboard/
     │        ├── rtl.scss
     │        ├── dark.scss
     │        ├── custom.scss
+    |        ├── customizer.scss
     │        └── hope-ui.scss
     ├── templates
     |    ├── layouts

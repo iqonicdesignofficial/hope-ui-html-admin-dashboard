@@ -18,7 +18,7 @@
         "js": {
             "core": [
                 "./node_modules/jquery/dist/jquery.js",
-                "./node_modules/waypoints/lib/jquery.waypoints.js",
+                "./node_modules/waypoints/lib/noframework.waypoints.min.js",
                 "./node_modules/datatables.net/js/jquery.dataTables.min.js",
                 "./node_modules/@popperjs/core/dist/umd/popper.min.js",
                 "./node_modules/bootstrap/dist/js/bootstrap.min.js",

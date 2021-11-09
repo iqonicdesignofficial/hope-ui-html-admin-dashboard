@@ -50,6 +50,23 @@ if(jQuery('#chart-1').length){
       options
   );
   chart.render();
+  document.addEventListener('ColorChange', (e) => {
+    const newOpt = {
+      colors: [e.detail.detail1],
+      fill: {
+        type: 'gradient',
+        gradient: {
+            type: "vertical",
+            inverseColors: true,
+            gradientToColors: [e.detail.detail1],
+            opacityFrom: 0.5,
+            opacityTo: 0,
+            stops: [0, 50, 60],
+            colors: [e.detail.detail1],
+        }
+    },}
+    chart.updateOptions(newOpt)
+    })
 }
 
 //chart-2
@@ -243,6 +260,10 @@ if(jQuery('#iq-chart-box1').length){
   };
   const chart = new ApexCharts(document.querySelector("#iq-chart-box1"), options);
   chart.render();
+  document.addEventListener('ColorChange', (e) => {
+  const newOpt = {colors: [e.detail.detail1],}
+  chart.updateOptions(newOpt)
+  })
   const body = document.querySelector('body')
   if (body.classList.contains('dark')) {
     apexChartUpdate(chart, {
@@ -252,6 +273,7 @@ if(jQuery('#iq-chart-box1').length){
   document.addEventListener('ChangeColorMode', function (e) {
     apexChartUpdate(chart, e.detail)
   })
+  
 }
 
 //box-chart-2
@@ -543,7 +565,7 @@ if($('#extrachart').length) {
 }
 /*-------------- Service Chart ----------------*/
 if (jQuery("#service-chart-01").length) {
-  var options = {
+  const options = {
     series: [{
     name: 'series1',
     data: [25, 30, 22, 29]
@@ -572,8 +594,21 @@ if (jQuery("#service-chart-01").length) {
   },
   };
 
-  var chart = new ApexCharts(document.querySelector("#service-chart-01"), options);
+  const chart = new ApexCharts(document.querySelector("#service-chart-01"), options);
   chart.render();
+  document.addEventListener('ColorChange', (e) => {
+  const newOpt = {
+    colors: [e.detail.detail1],
+    fill: {
+      type: 'gradient',
+      gradient: {
+          type: "vertical",
+          inverseColors: true,
+          colors: [e.detail.detail1],
+      }
+  },}
+  chart.updateOptions(newOpt)
+  });
 const body = document.querySelector('body')
 if (body.classList.contains('dark')) {
   apexChartUpdate(chart, {
@@ -586,7 +621,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 })
 }
 if (jQuery("#service-chart-02").length) {
-  var options = {
+  const options = {
     series: [{
     name: 'series1',
     data: [25, 23, 28, 26]
@@ -615,7 +650,7 @@ if (jQuery("#service-chart-02").length) {
   },
   };
 
-  var chart = new ApexCharts(document.querySelector("#service-chart-02"), options);
+  const chart = new ApexCharts(document.querySelector("#service-chart-02"), options);
   chart.render();
 const body = document.querySelector('body')
 if (body.classList.contains('dark')) {
@@ -629,7 +664,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 })
 }
 if (jQuery("#service-chart-03").length) {
-  var options = {
+  const options = {
     series: [{
     name: 'series1',
     data: [25, 23, 28, 23]
@@ -658,7 +693,7 @@ if (jQuery("#service-chart-03").length) {
   },
   };
 
-  var chart = new ApexCharts(document.querySelector("#service-chart-03"), options);
+  const chart = new ApexCharts(document.querySelector("#service-chart-03"), options);
   chart.render();
 const body = document.querySelector('body')
 if (body.classList.contains('dark')) {
@@ -672,7 +707,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 })
 }
 if (jQuery("#service-chart-04").length) {
-  var options = {
+  const options = {
     series: [{
     name: 'series1',
     data: [25, 27, 24, 26]
@@ -701,7 +736,7 @@ if (jQuery("#service-chart-04").length) {
   },
   };
 
-  var chart = new ApexCharts(document.querySelector("#service-chart-04"), options);
+  const chart = new ApexCharts(document.querySelector("#service-chart-04"), options);
   chart.render();
 const body = document.querySelector('body')
 if (body.classList.contains('dark')) {
@@ -717,7 +752,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 
 /*-------------- Ethernet Chart ----------------*/
 if (jQuery("#ethernet-chart-01").length) {
-  var options = {
+  const options = {
     series: [{
       name: "Desktops",
       data: [5, 30, 6, 20, 5, 18, 10]
@@ -753,8 +788,13 @@ if (jQuery("#ethernet-chart-01").length) {
   }
   };
 
-  var chart = new ApexCharts(document.querySelector("#ethernet-chart-01"), options);
+  const chart = new ApexCharts(document.querySelector("#ethernet-chart-01"), options);
   chart.render();
+  document.addEventListener('ColorChange', (e) => {
+  const newOpt = {colors: [e.detail.detail1], }
+  console.log(e.detail.detail1)
+  chart.updateOptions(newOpt)
+  });
 const body = document.querySelector('body')
 if (body.classList.contains('dark')) {
   apexChartUpdate(chart, {
@@ -767,7 +807,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 })
 }
 if (jQuery("#ethernet-chart-02").length) {
-  var options = {
+  const options = {
     series: [{
       name: "Desktops",
       data: [5, 20, 4, 18, 3, 15, 10]
@@ -803,7 +843,7 @@ if (jQuery("#ethernet-chart-02").length) {
   }
   };
 
-  var chart = new ApexCharts(document.querySelector("#ethernet-chart-02"), options);
+  const chart = new ApexCharts(document.querySelector("#ethernet-chart-02"), options);
   chart.render();
 const body = document.querySelector('body')
 if (body.classList.contains('dark')) {
@@ -817,7 +857,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 })
 }
 if (jQuery("#ethernet-chart-03").length) {
-  var options = {
+  const options = {
     series: [{
       name: "Desktops",
       data: [5, 20, 6, 18, 5, 15, 4]
@@ -853,7 +893,7 @@ if (jQuery("#ethernet-chart-03").length) {
   }
   };
 
-  var chart = new ApexCharts(document.querySelector("#ethernet-chart-03"), options);
+  const chart = new ApexCharts(document.querySelector("#ethernet-chart-03"), options);
   chart.render();
 const body = document.querySelector('body')
 if (body.classList.contains('dark')) {
@@ -867,7 +907,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 })
 }
 if (jQuery("#ethernet-chart-04").length) {
-  var options = {
+  const options = {
     series: [{
       name: "Desktops",
       data: [5, 15, 3, 20, 5, 18, 13]
@@ -903,7 +943,7 @@ if (jQuery("#ethernet-chart-04").length) {
   }
   };
 
-  var chart = new ApexCharts(document.querySelector("#ethernet-chart-04"), options);
+  const chart = new ApexCharts(document.querySelector("#ethernet-chart-04"), options);
   chart.render();
 const body = document.querySelector('body')
 if (body.classList.contains('dark')) {
@@ -919,7 +959,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 
 /*-------------- Ethernet Chart End ----------------*/
 if (jQuery("#chart-9").length) {
-  var options = {
+  const options = {
     series: [{
     name: 'series1',
     data: [25, 27, 24, 26]
@@ -948,7 +988,7 @@ if (jQuery("#chart-9").length) {
   },
   };
 
-  var chart = new ApexCharts(document.querySelector("#chart-9"), options);
+  const chart = new ApexCharts(document.querySelector("#chart-9"), options);
   chart.render();
 const body = document.querySelector('body')
 if (body.classList.contains('dark')) {

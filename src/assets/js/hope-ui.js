@@ -39,27 +39,22 @@ Index Of Script
 ----------------------------------------------*/
 "use strict";
 /*---------------------------------------------------------------------
-              Popover
+              Sticky-Nav
 -----------------------------------------------------------------------*/
-
-jQuery(window).on('scroll', function (e) {
-  //top menu sticky
-  if (jQuery(this).scrollTop() > 100) {
-    jQuery('.navs-sticky').addClass('menu-sticky');
-  } else {
-    jQuery('.navs-sticky').removeClass('menu-sticky');
+window.addEventListener('scroll', function() {
+ let yOffset = document.documentElement.scrollTop;
+  let navbar =  document.querySelector(".navs-sticky")
+  if (navbar !== null) {
+    if (yOffset >= 100) {
+        navbar.classList.add("menu-sticky");
+    } else {
+        navbar.classList.remove("menu-sticky");
+    }
   }
 });
-
-// window.onscroll = function() {myFunction()};
-
-// function myFunction() {
-//   if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-//     document.getElementById("myImg").className = "slideUp";
-//     document.getElementByClass("p2menu-sticky").style.transition = "unset";
-
-//   }
-// }
+/*---------------------------------------------------------------------
+              Popover
+-----------------------------------------------------------------------*/
 
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 if(typeof bootstrap !== typeof undefined) {
@@ -266,28 +261,28 @@ if($.fn.DataTable){
   }
 }
 
-// if($.fn.DataTable){
-//   if(document.querySelector('[data-toggle="data-table"]')) {
-//     const table = document.querySelector('[data-toggle="data-table"]').DataTable({
-//       "dom": '<"row align-items-center"<"col-md-6" l><"col-md-6" f>><"table-responsive border-bottom my-3" rt><"row align-items-center" <"col-md-6" i><"col-md-6" p>><"clear">',
-//     });
-//   }
-// }
 /*---------------------------------------------------------------------
   Active Class for Pricing Table
 -----------------------------------------------------------------------*/
-jQuery("#my-table tr th").on('click',function () {
-  jQuery('#my-table tr th').children().removeClass('active');
-  jQuery(this).children().addClass('active');
-  jQuery("#my-table td").each(function () {
-    if (jQuery(this).hasClass('active')) {
-      jQuery(this).removeClass('active')
-    }
-  });
-  var col = jQuery(this).index();
-  jQuery("#my-table tr td:nth-child(" + parseInt(col + 1) + ")").addClass('active');
-});
-
+const tableTh = document.querySelectorAll('#my-table tr th')
+const tableTd = document.querySelectorAll('#my-table td')
+if(tableTh !== null) {
+  Array.from(tableTh, (elem) => {
+    elem.addEventListener('click',(e) => {
+      Array.from(tableTh, (th) => {
+        if(th.children.length) {
+          th.children[0].classList.remove('active')
+        }
+      })
+      elem.children[0].classList.add('active')
+      Array.from(tableTd, (td) => td.classList.remove('active'))
+      
+      const col = Array.prototype.indexOf.call(document.querySelector('#my-table tr').children, elem);
+      const tdIcons = document.querySelectorAll("#my-table tr td:nth-child(" + parseInt(col + 1) + ")");
+      Array.from(tdIcons, (td) => td.classList.add('active'))
+    })
+  })
+}
 /*---------------------------------------------------------------------
               AOS Animation Plugin
 -----------------------------------------------------------------------*/
@@ -299,8 +294,9 @@ if(typeof AOS !== typeof undefined ) {
       var maxWidth = 996;
       return window.innerWidth < maxWidth;
     },
+    throttleDelay: 10,
     once: true,
-    duration: 800,
+    duration: 700,
     offset: 10
   });
 }
@@ -388,43 +384,26 @@ Array.from(sidebarToggleBtn, (sidebarBtn) => {
 /*------------------------
 Back To Top
 --------------------------*/
-$('#back-to-top').fadeOut();
-  $(window).on("scroll", function() {
-    if ($(this).scrollTop() > 250) {
-      $('#back-to-top').fadeIn(1400);
-    } 
-    else {
-      $('#back-to-top').fadeOut(400);
-    }
-  });
+const backToTop = document.getElementById("back-to-top")
+console.log(backToTop)
+if( backToTop !== null && backToTop !== undefined ) {
+  document.getElementById("back-to-top").classList.add("animate__animated","animate__fadeOut")
+  window.addEventListener('scroll', (e) => {
+  if (document.documentElement.scrollTop > 250) {
+    document.getElementById("back-to-top").classList.remove("animate__fadeOut")
+    document.getElementById("back-to-top").classList.add("animate__fadeIn")
+  }else {
+    document.getElementById("back-to-top").classList.remove("animate__fadeIn")
+    document.getElementById("back-to-top").classList.add("animate__fadeOut")
+  }
+})
 // scroll body to 0px on click
-  $('#top').on('click', function() {
-    $('top').tooltip('hide');
-    $('body,html').animate({
-      scrollTop: 0
-    }, 0);
-  return false;
-});
+document.querySelector('#top').addEventListener('click', (e) => {
+  e.preventDefault()
+  window.scrollTo({top: 0, behavior: 'smooth'});
+})
+}
 
-// const backToTop = document.querySelector('#back-to-top')
-
-// backToTop.classList.add('animate__animated','animate__fadeOut')
-
-// window.addEventListener('scroll', (e) => {
-//   if (document.documentElement.scrollTop > 250) {
-//     backToTop.classList.remove('animate__fadeOut')
-//     backToTop.classList.add('animate__fadeIn')
-//   }else {
-//     backToTop.classList.remove('animate__fadeIn')
-//     backToTop.classList.add('animate__fadeOut')
-//   }
-// })
-
-// // scroll body to 0px on click
-// document.querySelector('#top').addEventListener('click', (e) => {
-//   e.preventDefault()
-//   window.scrollTo({top: 0, behavior: 'smooth'});
-// })
 
 /*---------------------------------------------------------------------
               DOMContentLoaded
