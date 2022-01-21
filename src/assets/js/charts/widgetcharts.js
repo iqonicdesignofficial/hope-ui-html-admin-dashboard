@@ -2,7 +2,7 @@
   "use strict";
 
 //chart-1
-if(jQuery('#chart-1').length){
+if(document.querySelectorAll('#chart-1').length){
   const options = {
     chart: {
         height: 80,
@@ -70,7 +70,7 @@ if(jQuery('#chart-1').length){
 }
 
 //chart-2
-if(jQuery('#chart-2').length){
+if(document.querySelectorAll('#chart-2').length){
   const options = {
     chart: {
         height: 80,
@@ -121,7 +121,7 @@ if(jQuery('#chart-2').length){
 }
 
 /*--------------Widget Chart 3----------------*/
-if(jQuery('#chart-3').length){
+if(document.querySelectorAll('#chart-3').length){
   const options = {
     chart: {
         height: 80,
@@ -171,7 +171,7 @@ if(jQuery('#chart-3').length){
 }
 
 /*--------------Widget Chart 4----------------*/
-if(jQuery('#chart-4').length){
+if(document.querySelectorAll('#chart-4').length){
   const options = {
     chart: {
         height: 80,
@@ -222,7 +222,7 @@ if(jQuery('#chart-4').length){
 
 /*--------------Widget Box----------------*/
 
-if(jQuery('#iq-chart-box1').length){
+if(document.querySelectorAll('#iq-chart-box1').length){
   const options = {
     series: [{
       name: "Total sales",
@@ -277,7 +277,7 @@ if(jQuery('#iq-chart-box1').length){
 }
 
 //box-chart-2
-if(jQuery('#iq-chart-box2').length){
+if(document.querySelectorAll('#iq-chart-box2').length){
   const options = {
     series: [{
       name: "Sale Today",
@@ -329,7 +329,7 @@ if(jQuery('#iq-chart-box2').length){
 
 //box-chart-3
 
-if(jQuery('#iq-chart-box3').length){
+if(document.querySelectorAll('#iq-chart-box3').length){
   const options = {
     series: [{
       name: "Total Classon",
@@ -382,7 +382,7 @@ if(jQuery('#iq-chart-box3').length){
 
 //box-chart-4
 
-if(jQuery('#iq-chart-box4').length){
+if(document.querySelectorAll('#iq-chart-box4').length){
   const options = {
     series: [{
       name: "Total Profit",
@@ -564,7 +564,7 @@ if($('#extrachart').length) {
   chart.render();
 }
 /*-------------- Service Chart ----------------*/
-if (jQuery("#service-chart-01").length) {
+if (document.querySelectorAll("#service-chart-01").length) {
   const options = {
     series: [{
     name: 'series1',
@@ -620,7 +620,7 @@ document.addEventListener('ChangeColorMode', function (e) {
   apexChartUpdate(chart, e.detail)
 })
 }
-if (jQuery("#service-chart-02").length) {
+if (document.querySelectorAll("#service-chart-02").length) {
   const options = {
     series: [{
     name: 'series1',
@@ -663,7 +663,7 @@ document.addEventListener('ChangeColorMode', function (e) {
   apexChartUpdate(chart, e.detail)
 })
 }
-if (jQuery("#service-chart-03").length) {
+if (document.querySelectorAll("#service-chart-03").length) {
   const options = {
     series: [{
     name: 'series1',
@@ -706,7 +706,7 @@ document.addEventListener('ChangeColorMode', function (e) {
   apexChartUpdate(chart, e.detail)
 })
 }
-if (jQuery("#service-chart-04").length) {
+if (document.querySelectorAll("#service-chart-04").length) {
   const options = {
     series: [{
     name: 'series1',
@@ -751,7 +751,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 }
 
 /*-------------- Ethernet Chart ----------------*/
-if (jQuery("#ethernet-chart-01").length) {
+if (document.querySelectorAll("#ethernet-chart-01").length) {
   const options = {
     series: [{
       name: "Desktops",
@@ -806,7 +806,7 @@ document.addEventListener('ChangeColorMode', function (e) {
   apexChartUpdate(chart, e.detail)
 })
 }
-if (jQuery("#ethernet-chart-02").length) {
+if (document.querySelectorAll("#ethernet-chart-02").length) {
   const options = {
     series: [{
       name: "Desktops",
@@ -856,7 +856,7 @@ document.addEventListener('ChangeColorMode', function (e) {
   apexChartUpdate(chart, e.detail)
 })
 }
-if (jQuery("#ethernet-chart-03").length) {
+if (document.querySelectorAll("#ethernet-chart-03").length) {
   const options = {
     series: [{
       name: "Desktops",
@@ -906,7 +906,7 @@ document.addEventListener('ChangeColorMode', function (e) {
   apexChartUpdate(chart, e.detail)
 })
 }
-if (jQuery("#ethernet-chart-04").length) {
+if (document.querySelectorAll("#ethernet-chart-04").length) {
   const options = {
     series: [{
       name: "Desktops",
@@ -958,7 +958,7 @@ document.addEventListener('ChangeColorMode', function (e) {
 }
 
 /*-------------- Ethernet Chart End ----------------*/
-if (jQuery("#chart-9").length) {
+if (document.querySelectorAll("#chart-9").length) {
   const options = {
     series: [{
     name: 'series1',

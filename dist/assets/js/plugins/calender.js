@@ -6,7 +6,7 @@ NOTE: This file contains the all calender events.
 */
 "use strict"
 
-if (jQuery('#calendar1').length) {
+if (document.querySelectorAll('#calendar1').length) {
   document.addEventListener('DOMContentLoaded', function () {
     let calendarEl = document.getElementById('calendar1');
     let calendar1 = new FullCalendar.Calendar(calendarEl, {

@@ -46,7 +46,7 @@
     .iq-navbar {
         .navbar-collapse {
             &:not(.offcanvas-collapse) {
-                // background: $body-bg;
+                background: $card-bg;
             }
         }
     }

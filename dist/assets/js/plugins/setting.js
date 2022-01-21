@@ -1,5 +1,5 @@
 /*
-* Version: 1.1.0
+* Version: 1.1.1
 * Template: Hope-Ui - Responsive Bootstrap 5 Admin Dashboard Template
 * Author: iqonic.design
 * Design and Developed by: iqonic.design
@@ -27,12 +27,13 @@ Index Of Script
 :: Sidebar Active Style
 :: Navbar & Header style
 :: Navbar default style
+:: colorChange Mode
 
 ------------------------------------------------
 Index Of Script
 ----------------------------------------------*/
 
-(function (jQuery) {
+(function () {
     "use strict";
 
     // Variables
@@ -97,7 +98,10 @@ Index Of Script
         }
         if (type == 'sidebar') {
             detailObj = {'sidebar-color': value}            
-            document.querySelector('.sidebar-default').classList.add(value)
+           const sidebarclass= document.querySelector('.sidebar-default')
+           if(sidebarclass !== null && sidebarclass !== undefined){
+                sidebarclass.classList.add(value)
+           }
         }
         const event = new CustomEvent("ChangeMode", {detail: detailObj });
         document.dispatchEvent(event);
@@ -250,7 +254,6 @@ Index Of Script
                     }
                 }
             }
-            console.log(sidebarTypeSetting)
             sessionStorage.setItem('sidebarType', JSON.stringify(sidebarTypeSetting))
         })
     })
@@ -296,5 +299,58 @@ Index Of Script
             sessionStorage.setItem('navbarTypes', '')
         })
     }
+   
+    // For colorChange Mode
+    const customizerMode = (custombodyclass,colors,colorInfo) => {
+    document.querySelector('body').classList.add(`${custombodyclass}`)
+    sessionStorage.setItem('colorcustomchart-mode', getComputedStyle(document.body).getPropertyValue('--bs-primary'))
+    document.documentElement.style.setProperty('--bs-info', colors);
+    const color = sessionStorage.getItem('colorcustomchart-mode')
+    if(color !== 'null' && color !== undefined && color !== ''){
+    const event = new CustomEvent("ColorChange", {detail :{detail1:color.trim(), detail2:colors.trim()}});
+    document.dispatchEvent(event);
+    }
+    else{
+    const event = new CustomEvent("ColorChange", {detail :{detail1:colorInfo.trim(), detail2:colors.trim()}});
+    document.dispatchEvent(event);
+    }
+    const elements = document.querySelectorAll('[data-setting="color-mode1"][data-name="color"]')
+    Array.from(elements, (mode) => {
+        const colorclass = mode.getAttribute('data-value');
+        if(colorclass === custombodyclass ){
+            mode.classList.add('active')
+        }
+        else{
+            mode.classList.remove('active')
+        }
+    })
+    }
 
-})(jQuery)
+    const elements = document.querySelectorAll('[data-setting="color-mode1"][data-name="color"]')
+    Array.from(elements, (mode) => {
+    mode.addEventListener('click', (e) => {
+        Array.from(elements, (el) => {
+            el.classList.remove('active')
+            document.querySelector('body').classList.remove(el.getAttribute('data-value'))
+        })
+        sessionStorage.setItem('colorcustom-mode', mode.getAttribute('data-value'))
+        sessionStorage.setItem('colorcustominfo-mode', mode.getAttribute('data-info'))
+        
+        mode.classList.add('active')
+        const colors = mode.getAttribute('data-info');
+        const color = getComputedStyle(document.body).getPropertyValue('--bs-primary');
+        customizerMode(mode.getAttribute('data-value'),colors,color)
+        
+        })
+    })
+    
+    const custombodyclass = sessionStorage.getItem('colorcustom-mode')
+    const colors = sessionStorage.getItem('colorcustominfo-mode')
+    const color = sessionStorage.getItem('colorcustomchart-mode')
+    if(custombodyclass !== null && custombodyclass !== undefined && colors !== null && colors !== undefined){
+        customizerMode(custombodyclass,colors,color)     
+    }
+
+    
+
+})()

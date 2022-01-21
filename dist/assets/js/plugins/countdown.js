@@ -1,4 +1,4 @@
-(function (jQuery) {
+(function () {
   "use strict";
 
 function getTimeRemaining(endtime) {
@@ -48,4 +48,4 @@ function getTimeRemaining(endtime) {
   const deadline = new Date(time)
   initializeClock('.countdown', deadline)
 
-})(jQuery)
+})()

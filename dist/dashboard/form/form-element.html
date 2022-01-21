@@ -14,16 +14,20 @@
       
       
       <!-- Hope Ui Design System Css -->
-      <link rel="stylesheet" href="../../assets/css/hope-ui.min.css?v=1.1.0" />
+      <link rel="stylesheet" href="../../assets/css/hope-ui.min.css?v=1.1.2" />
       
       <!-- Custom Css -->
-      <link rel="stylesheet" href="../../assets/css/custom.min.css?v=1.1.0" />
+      <link rel="stylesheet" href="../../assets/css/custom.min.css?v=1.1.2" />
+      
+      <!-- Customizer Css -->
+      <link rel="stylesheet" href="../../assets/css/customizer.min.css" />
       
       <!-- Dark Css -->
       <link rel="stylesheet" href="../../assets/css/dark.min.css"/>
       
       <!-- RTL Css -->
       <link rel="stylesheet" href="../../assets/css/rtl.min.css"/>
+      
   </head>
   <body class="  ">
     <!-- loader Start -->
@@ -475,6 +479,17 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../dashboard/admin.html">
+                            <i class="icon">
+                            <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.7688 8.71387H16.2312C18.5886 8.71387 20.5 10.5831 20.5 12.8885V17.8254C20.5 20.1308 18.5886 22 16.2312 22H7.7688C5.41136 22 3.5 20.1308 3.5 17.8254V12.8885C3.5 10.5831 5.41136 8.71387 7.7688 8.71387ZM11.9949 17.3295C12.4928 17.3295 12.8891 16.9419 12.8891 16.455V14.2489C12.8891 13.772 12.4928 13.3844 11.9949 13.3844C11.5072 13.3844 11.1109 13.772 11.1109 14.2489V16.455C11.1109 16.9419 11.5072 17.3295 11.9949 17.3295Z" fill="currentColor"></path>
+                            <path opacity="0.4" d="M17.523 7.39595V8.86667C17.1673 8.7673 16.7913 8.71761 16.4052 8.71761H15.7447V7.39595C15.7447 5.37868 14.0681 3.73903 12.0053 3.73903C9.94257 3.73903 8.26594 5.36874 8.25578 7.37608V8.71761H7.60545C7.20916 8.71761 6.83319 8.7673 6.47754 8.87661V7.39595C6.4877 4.41476 8.95692 2 11.985 2C15.0537 2 17.523 4.41476 17.523 7.39595Z" fill="currentColor"></path>
+                            </svg>
+                            </i>
+                            <span class="item-name">Admin</span>
+                        </a>
+                    </li>
                     <li><hr class="hr-horizontal"></li>
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled" href="#" tabindex="-1">
@@ -787,22 +802,22 @@
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon">
-                  <span class="navbar-toggler-bar bar1 mt-2"></span>
+                  <span class="mt-2 navbar-toggler-bar bar1"></span>
                   <span class="navbar-toggler-bar bar2"></span>
                   <span class="navbar-toggler-bar bar3"></span>
                 </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
+              <ul class="mb-2 navbar-nav ms-auto align-items-center navbar-list mb-lg-0">
                  <li class="nav-item dropdown">
                     <a href="#" class="search-toggle nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="../../assets/images/Flag/flag001.png" class="img-fluid rounded-circle" alt="user" style="height: 30px; min-width: 30px; width: 30px;">
                     <span class="bg-primary"></span>
                     </a>
-                    <div class="sub-drop dropdown-menu dropdown-menu-end p-0" aria-labelledby="dropdownMenuButton2">
-                        <div class="card shadow-none m-0 border-0">
-                            <div class=" p-0 ">
-                                <ul class="list-group list-group-flush p-0">
+                    <div class="p-0 sub-drop dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
+                        <div class="m-0 border-0 shadow-none card">
+                            <div class="p-0 ">
+                                <ul class="p-0 list-group list-group-flush">
                                     <li class="iq-sub-card list-group-item"><a class="p-0" href="#"><img src="../../assets/images/Flag/flag-03.png" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>Spanish</a></li>
                                     <li class="iq-sub-card list-group-item"><a class="p-0" href="#"><img src="../../assets/images/Flag/flag-04.png" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>Italian</a></li>
                                     <li class="iq-sub-card list-group-item"><a class="p-0" href="#"><img src="../../assets/images/Flag/flag-02.png" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>French</a></li>
@@ -821,17 +836,17 @@
                       </svg>
                       <span class="bg-danger dots"></span>
                   </a>
-                  <div class="sub-drop dropdown-menu dropdown-menu-end p-0" aria-labelledby="notification-drop">
-                      <div class="card shadow-none m-0">
-                        <div class="card-header d-flex justify-content-between bg-primary py-3">
+                  <div class="p-0 sub-drop dropdown-menu dropdown-menu-end" aria-labelledby="notification-drop">
+                      <div class="m-0 shadow-none card">
+                        <div class="py-3 card-header d-flex justify-content-between bg-primary">
                             <div class="header-title">
                               <h5 class="mb-0 text-white">All Notifications</h5>
                             </div>
                         </div>
-                        <div class="card-body p-0">
+                        <div class="p-0 card-body">
                             <a href="#" class="iq-sub-card">
                               <div class="d-flex align-items-center">
-                                  <img class="avatar-40 rounded-pill bg-soft-primary p-1" src="../../assets/images/shapes/01.png" alt="">
+                                  <img class="p-1 avatar-40 rounded-pill bg-soft-primary" src="../../assets/images/shapes/01.png" alt="">
                                   <div class="ms-3 w-100">
                                     <h6 class="mb-0 ">Emma Watson Bni</h6>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -844,7 +859,7 @@
                             <a href="#" class="iq-sub-card">
                               <div class="d-flex align-items-center">
                                   <div class="">
-                                    <img class="avatar-40 rounded-pill bg-soft-primary p-1" src="../../assets/images/shapes/02.png" alt="">
+                                    <img class="p-1 avatar-40 rounded-pill bg-soft-primary" src="../../assets/images/shapes/02.png" alt="">
                                   </div>
                                   <div class="ms-3 w-100">
                                     <h6 class="mb-0 ">New customer is join</h6>
@@ -857,7 +872,7 @@
                             </a>
                             <a href="#" class="iq-sub-card">
                               <div class="d-flex align-items-center">
-                                  <img class="avatar-40 rounded-pill bg-soft-primary p-1" src="../../assets/images/shapes/03.png" alt="">
+                                  <img class="p-1 avatar-40 rounded-pill bg-soft-primary" src="../../assets/images/shapes/03.png" alt="">
                                   <div class="ms-3 w-100">
                                     <h6 class="mb-0 ">Two customer is left</h6>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -869,7 +884,7 @@
                             </a>
                             <a href="#" class="iq-sub-card">
                               <div class="d-flex align-items-center">
-                                  <img class="avatar-40 rounded-pill bg-soft-primary p-1" src="../../assets/images/shapes/04.png" alt="">
+                                  <img class="p-1 avatar-40 rounded-pill bg-soft-primary" src="../../assets/images/shapes/04.png" alt="">
                                   <div class="w-100 ms-3">
                                     <h6 class="mb-0 ">New Mail from Fenny</h6>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -891,18 +906,18 @@
                     </svg>
                     <span class="bg-primary count-mail"></span>
                   </a>
-                  <div class="sub-drop dropdown-menu dropdown-menu-end p-0" aria-labelledby="mail-drop">
-                      <div class="card shadow-none m-0">
-                        <div class="card-header d-flex justify-content-between bg-primary py-3">
+                  <div class="p-0 sub-drop dropdown-menu dropdown-menu-end" aria-labelledby="mail-drop">
+                      <div class="m-0 shadow-none card">
+                        <div class="py-3 card-header d-flex justify-content-between bg-primary">
                             <div class="header-title">
                               <h5 class="mb-0 text-white">All Message</h5>
                             </div>
                         </div>
-                        <div class="card-body p-0 ">
+                        <div class="p-0 card-body ">
                             <a href="#" class="iq-sub-card">
-                              <div class="d-flex  align-items-center">
+                              <div class="d-flex align-items-center">
                                   <div class="">
-                                    <img class="avatar-40 rounded-pill bg-soft-primary p-1" src="../../assets/images/shapes/01.png" alt="">
+                                    <img class="p-1 avatar-40 rounded-pill bg-soft-primary" src="../../assets/images/shapes/01.png" alt="">
                                   </div>
                                   <div class="ms-3">
                                     <h6 class="mb-0 ">Bni Emma Watson</h6>
@@ -913,7 +928,7 @@
                             <a href="#" class="iq-sub-card">
                               <div class="d-flex align-items-center">
                                   <div class="">
-                                    <img class="avatar-40 rounded-pill bg-soft-primary p-1" src="../../assets/images/shapes/02.png" alt="">
+                                    <img class="p-1 avatar-40 rounded-pill bg-soft-primary" src="../../assets/images/shapes/02.png" alt="">
                                   </div>
                                   <div class="ms-3">
                                     <h6 class="mb-0 ">Lorem Ipsum Watson</h6>
@@ -924,7 +939,7 @@
                             <a href="#" class="iq-sub-card">
                               <div class="d-flex align-items-center">
                                   <div class="">
-                                    <img class="avatar-40 rounded-pill bg-soft-primary p-1" src="../../assets/images/shapes/03.png" alt="">
+                                    <img class="p-1 avatar-40 rounded-pill bg-soft-primary" src="../../assets/images/shapes/03.png" alt="">
                                   </div>
                                   <div class="ms-3">
                                     <h6 class="mb-0 ">Why do we use it?</h6>
@@ -935,7 +950,7 @@
                             <a href="#" class="iq-sub-card">
                               <div class="d-flex align-items-center">
                                   <div class="">
-                                    <img class="avatar-40 rounded-pill bg-soft-primary p-1" src="../../assets/images/shapes/04.png" alt="">
+                                    <img class="p-1 avatar-40 rounded-pill bg-soft-primary" src="../../assets/images/shapes/04.png" alt="">
                                   </div>
                                   <div class="ms-3">
                                     <h6 class="mb-0 ">Variations Passages</h6>
@@ -946,7 +961,7 @@
                             <a href="#" class="iq-sub-card">
                               <div class="d-flex align-items-center">
                                   <div class="">
-                                    <img class="avatar-40 rounded-pill bg-soft-primary p-1" src="../../assets/images/shapes/05.png" alt="">
+                                    <img class="p-1 avatar-40 rounded-pill bg-soft-primary" src="../../assets/images/shapes/05.png" alt="">
                                   </div>
                                   <div class="ms-3">
                                     <h6 class="mb-0 ">Lorem Ipsum generators</h6>
@@ -959,8 +974,13 @@
                   </div>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link py-0 d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../../assets/images/avatars/01.png" alt="User-Profile" class="img-fluid avatar avatar-50 avatar-rounded">
+                  <a class="py-0 nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../../assets/images/avatars/01.png" alt="User-Profile" class="theme-color-default-img img-fluid avatar avatar-50 avatar-rounded">
+                    <img src="../../assets/images/avatars/avtar_1.png" alt="User-Profile" class="theme-color-purple-img img-fluid avatar avatar-50 avatar-rounded">
+                    <img src="../../assets/images/avatars/avtar_2.png" alt="User-Profile" class="theme-color-blue-img img-fluid avatar avatar-50 avatar-rounded">
+                    <img src="../../assets/images/avatars/avtar_4.png" alt="User-Profile" class="theme-color-green-img img-fluid avatar avatar-50 avatar-rounded">
+                    <img src="../../assets/images/avatars/avtar_5.png" alt="User-Profile" class="theme-color-yellow-img img-fluid avatar avatar-50 avatar-rounded">
+                    <img src="../../assets/images/avatars/avtar_3.png" alt="User-Profile" class="theme-color-pink-img img-fluid avatar avatar-50 avatar-rounded">
                     <div class="caption ms-3 d-none d-md-block ">
                         <h6 class="mb-0 caption-title">Austin Robertson</h6>
                         <p class="mb-0 caption-sub-title">Marketing Administrator</p>
@@ -981,7 +1001,7 @@
               <div class="container-fluid iq-container">
                   <div class="row">
                       <div class="col-md-12">
-                          <div class="d-flex justify-content-between align-items-center flex-wrap">
+                          <div class="flex-wrap d-flex justify-content-between align-items-center">
                               <div>
                                   <h1>Hello Devs!</h1>
                                   <p>We are on a mission to help developers like you build successful projects for FREE.</p>
@@ -1000,7 +1020,12 @@
                   </div>
               </div>
               <div class="iq-header-img">
-                  <img src="../../assets/images/dashboard/top-header.png" alt="header" class="img-fluid w-100 h-100 animated-scaleX">
+                  <img src="../../assets/images/dashboard/top-header.png" alt="header" class="theme-color-default-img img-fluid w-100 h-100 animated-scaleX">
+                  <img src="../../assets/images/dashboard/top-header1.png" alt="header" class="theme-color-purple-img img-fluid w-100 h-100 animated-scaleX">
+                  <img src="../../assets/images/dashboard/top-header2.png" alt="header" class="theme-color-blue-img img-fluid w-100 h-100 animated-scaleX">
+                  <img src="../../assets/images/dashboard/top-header3.png" alt="header" class="theme-color-green-img img-fluid w-100 h-100 animated-scaleX">
+                  <img src="../../assets/images/dashboard/top-header4.png" alt="header" class="theme-color-yellow-img img-fluid w-100 h-100 animated-scaleX">
+                  <img src="../../assets/images/dashboard/top-header5.png" alt="header" class="theme-color-pink-img img-fluid w-100 h-100 animated-scaleX">
               </div>
           </div>          <!-- Nav Header Component End -->
         <!--Nav End-->
@@ -1538,6 +1563,34 @@
                 <span class="ms-2 "> Light</span>
               </div>
             </div>
+            <hr class="hr-horizontal"> 
+            <div class="d-flex align-items-center justify-content-between">
+            <h5 class="mt-4 mb-3">Color Customizer</h5>
+            <div  data-value="theme-color-default" data-info="#079aa2" data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Default">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.4799 12.2424C21.7557 12.2326 21.9886 12.4482 21.9852 12.7241C21.9595 14.8075 21.2975 16.8392 20.0799 18.5506C18.7652 20.3986 16.8748 21.7718 14.6964 22.4612C12.518 23.1505 10.1711 23.1183 8.01299 22.3694C5.85488 21.6205 4.00382 20.196 2.74167 18.3126C1.47952 16.4293 0.875433 14.1905 1.02139 11.937C1.16734 9.68346 2.05534 7.53876 3.55018 5.82945C5.04501 4.12014 7.06478 2.93987 9.30193 2.46835C11.5391 1.99683 13.8711 2.2599 15.9428 3.2175L16.7558 1.91838C16.9822 1.55679 17.5282 1.62643 17.6565 2.03324L18.8635 5.85986C18.945 6.11851 18.8055 6.39505 18.549 6.48314L14.6564 7.82007C14.2314 7.96603 13.8445 7.52091 14.0483 7.12042L14.6828 5.87345C13.1977 5.18699 11.526 4.9984 9.92231 5.33642C8.31859 5.67443 6.8707 6.52052 5.79911 7.74586C4.72753 8.97119 4.09095 10.5086 3.98633 12.1241C3.8817 13.7395 4.31474 15.3445 5.21953 16.6945C6.12431 18.0446 7.45126 19.0658 8.99832 19.6027C10.5454 20.1395 12.2278 20.1626 13.7894 19.6684C15.351 19.1743 16.7062 18.1899 17.6486 16.8652C18.4937 15.6773 18.9654 14.2742 19.0113 12.8307C19.0201 12.5545 19.2341 12.3223 19.5103 12.3125L21.4799 12.2424Z" fill="#31BAF1"/>
+              <path d="M20.0941 18.5594C21.3117 16.848 21.9736 14.8163 21.9993 12.7329C22.0027 12.4569 21.7699 12.2413 21.4941 12.2512L19.5244 12.3213C19.2482 12.3311 19.0342 12.5633 19.0254 12.8395C18.9796 14.283 18.5078 15.6861 17.6628 16.8739C16.7203 18.1986 15.3651 19.183 13.8035 19.6772C12.2419 20.1714 10.5595 20.1483 9.01246 19.6114C7.4654 19.0746 6.13845 18.0534 5.23367 16.7033C4.66562 15.8557 4.28352 14.9076 4.10367 13.9196C4.00935 18.0934 6.49194 21.37 10.008 22.6416C10.697 22.8908 11.4336 22.9852 12.1652 22.9465C13.075 22.8983 13.8508 22.742 14.7105 22.4699C16.8889 21.7805 18.7794 20.4073 20.0941 18.5594Z" fill="#0169CA"/>
+              </svg>
+              </div>
+            </div>
+            <div class="grid-cols-5 mb-4 d-grid gap-x-2">
+              <div class="btn-border"  data-value="theme-color-blue"  data-info="#573BFF" data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Theme-1">
+              <svg  class="customizer-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"> <circle cx="12" cy="12" r="10" fill="#00C3F9" /> <path d="M2,12 a1,1 1 1,0 20,0" fill="#573BFF" /></svg>
+              </div>
+              <div class="btn-border" data-value="theme-color-gray" data-info="#FD8D00" data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Theme-2">
+              <svg  class="customizer-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"> <circle cx="12" cy="12" r="10" fill="#91969E" /> <path d="M2,12 a1,1 1 1,0 20,0" fill="#FD8D00" /></svg>
+              </div>
+              <div class="btn-border"  data-value="theme-color-red" data-info="#366AF0" data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Theme-3">
+              <svg  class="customizer-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"> <circle cx="12" cy="12" r="10" fill="#DB5363" /> <path d="M2,12 a1,1 1 1,0 20,0" fill="#366AF0" /></svg>
+              </div>
+              <div class="btn-border"  data-value="theme-color-yellow" data-info="#6410F1" data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Theme-4">
+              <svg  class="customizer-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"> <circle cx="12" cy="12" r="10" fill="#EA6A12" /> <path d="M2,12 a1,1 1 1,0 20,0" fill="#6410F1" /></svg>
+              </div>
+              <div class="btn-border"  data-value="theme-color-pink" data-info="#25C799" data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Theme-5">
+              <svg  class="customizer-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"> <circle cx="12" cy="12" r="10" fill="#E586B3" /> <path d="M2,12 a1,1 1 1,0 20,0" fill="#25C799" /></svg>
+              </div>
+              
+            </div>
             <hr class="hr-horizontal">
             <h5 class="mb-3 mt-4">Scheme Direction</h5>
             <div class="d-grid gap-x-3 grid-cols-2 mb-4">
@@ -1678,7 +1731,7 @@
     
     <!-- mapchart Script -->
     <script src="../../assets/js/charts/vectore-chart.js"></script>
-    <script src="../../assets/js/charts/dashboard.js" defer></script>
+    <script src="../../assets/js/charts/dashboard.js" ></script>
     
     <!-- fslightbox Script -->
     <script src="../../assets/js/plugins/fslightbox.js"></script>

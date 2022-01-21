@@ -1,5 +1,4 @@
 .btn{
-    font-size: var(--body-font-size);
     &.btn-primary{
         color: var(--#{$variable-prefix}white);
         background-color: var(--#{$variable-prefix}primary);
@@ -24,12 +23,12 @@
         }
     }
     &.btn-outline-primary{
-        color: var(--#{$variable-prefix}primary-shade-20);
-        border-color: var(--#{$variable-prefix}primary-shade-20);
+        color: var(--#{$variable-prefix}primary);
+        border-color: var(--#{$variable-prefix}primary);
         &:hover{
             color:  var(--#{$variable-prefix}white);
-            background-color: var(--#{$variable-prefix}primary-shade-20);
-            border-color: var(--#{$variable-prefix}primary-shade-20);
+            background-color: var(--#{$variable-prefix}primary);
+            border-color: var(--#{$variable-prefix}primary);
         }
         &:active{
             color: var(--#{$variable-prefix}white);

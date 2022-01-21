@@ -1,6 +1,6 @@
 (function (jQuery) {
   "use strict";
-if (jQuery('#myChart').length) {
+if (document.querySelectorAll('#myChart').length) {
   const options = {
     series: [55, 75],
     chart: {
@@ -35,7 +35,7 @@ if (jQuery('#myChart').length) {
     })
   }
 }
-if (jQuery('#d-activity').length) {
+if (document.querySelectorAll('#d-activity').length) {
     const options = {
       series: [{
         name: 'Successful deals',
@@ -113,7 +113,7 @@ if (jQuery('#d-activity').length) {
     chart.updateOptions(newOpt)
     })
   }
-if (jQuery('#d-main').length) {
+if (document.querySelectorAll('#d-main').length) {
   const options = {
       series: [{
           name: 'total',
