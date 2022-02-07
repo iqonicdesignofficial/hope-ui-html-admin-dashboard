@@ -11,6 +11,7 @@
     // Components
     @import "./components/accordion/custom-accordion";
     @import "./components/button/border-button";
+    @import "./components/button/soft-btn";
     @import "./components/close/close";
     @import "./components/menu-style/default-sidebar";
     @import "./components/menu-style/dual-horizontal";
@@ -31,6 +32,7 @@
     @import "./components/widgets/credit-card";
     @import "./components/progressbar/progressbar";
     @import "./components/pagination/pagination";
+    @import "./components/popover/popover";
 
     // Pages
     @import "./pages/kanban/kanban";

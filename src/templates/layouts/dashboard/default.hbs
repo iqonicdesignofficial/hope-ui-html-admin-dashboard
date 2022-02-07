@@ -11,7 +11,7 @@
         {{!-- External page head section--}}
       {{/block}}
   </head>
-  <body class=" {{bodyClass}} {{#compare dark '===' 'true'}} dark {{/compare}}">
+  <body class=" {{bodyClass}} ">
     <!-- loader Start -->
     <div id="loading">
       {{> partials/dashboard/loader }}
@@ -19,7 +19,7 @@
     <!-- loader END -->
     {{> partials/dashboard/sidebar }}
     <main class="main-content">
-      <div class="position-relative">
+      <div class="position-relative iq-banner">
         <!--Nav Start-->
         {{> partials/dashboard/header }}
           <!-- Nav Header Component Start -->

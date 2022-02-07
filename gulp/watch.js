@@ -21,7 +21,7 @@ module.exports = function (browserSync) {
                     baseDir: `./${directory}`,
                     index: "index.html"
                 },
-                reloadDelay: 1000
+                reloadDelay: 1500
             });
 
             gulp.watch('./src/**/*.scss', gulp.series('style:main'));
