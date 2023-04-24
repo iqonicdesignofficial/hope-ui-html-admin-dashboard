@@ -223,22 +223,21 @@ if(document.querySelectorAll('#chart-4').length){
 /*--------------Widget Box----------------*/
 
 if(document.querySelectorAll('#iq-chart-box1').length){
-  const options = {
+  var options = {
     series: [{
-      name: "Total sales",
+      name: "Desktops",
       data: [10, 10, 35, 10]
   }],
-    colors: ["#344ed1"],
     chart: {
-    height: 50,
-    width: 100,
-    type: 'line',
-    sparkline: {
-        enabled: true,
-    },
+      height: 60,
+      width: 100,
+      type: 'line',
     zoom: {
       enabled: false
-    }
+    },
+    sparkline: {
+      enabled: true,
+  }
   },
   dataLabels: {
     enabled: false
@@ -246,190 +245,122 @@ if(document.querySelectorAll('#iq-chart-box1').length){
   stroke: {
     curve: 'straight'
   },
-  title: {
-    text: '',
-    align: 'left'
-  },
-  
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar'],
-  },
-  tooltip:{
-    enabled: false,
+    categories: ['Jan', 'Feb', 'Mar', 'Apr'],
   }
   };
   const chart = new ApexCharts(document.querySelector("#iq-chart-box1"), options);
   chart.render();
-  document.addEventListener('ColorChange', (e) => {
-  const newOpt = {colors: [e.detail.detail1],}
-  chart.updateOptions(newOpt)
-  })
-  const body = document.querySelector('body')
-  if (body.classList.contains('dark')) {
-    apexChartUpdate(chart, {
-      dark: true
-    })
-  }
-  document.addEventListener('ChangeColorMode', function (e) {
-    apexChartUpdate(chart, e.detail)
-  })
-  
 }
-
 //box-chart-2
-if(document.querySelectorAll('#iq-chart-box2').length){
-  const options = {
+if(jQuery('#iq-chart-box2').length){
+  var options = {
     series: [{
-      name: "Sale Today",
+      name: "Desktops",
       data: [10, 10, 35, 10]
   }],
-    colors: ["#b91d12"],
     chart: {
-    height: 50,
-    width: 100,
-    type: 'line',
-    sparkline: {
-        enabled: true,
-    },
+      height: 60,
+      width: 100,
+      type: 'line',
     zoom: {
       enabled: false
-    }
+    },
+    sparkline: {
+      enabled: true,
+  }
   },
+  colors:['#ad2d1e'],
   dataLabels: {
     enabled: false
   },
   stroke: {
     curve: 'straight'
   },
-  title: {
-    text: '',
-    align: 'left'
-  },
-  
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar'],
-  },
-  tooltip:{
-    enabled: false,
+    categories: ['Jan', 'Feb', 'Mar', 'Apr'],
   }
-  
   };
-  const chart = new ApexCharts(document.querySelector("#iq-chart-box2"), options);
+
+  var chart = new ApexCharts(document.querySelector("#iq-chart-box2"), options);
   chart.render();
-  const body = document.querySelector('body')
-  if (body.classList.contains('dark')) {
-    apexChartUpdate(chart, {
-      dark: true
-    })
-  }
-  document.addEventListener('ChangeColorMode', function (e) {
-    apexChartUpdate(chart, e.detail)
+const body = document.querySelector('body')
+if (body.classList.contains('dark')) {
+  apexChartUpdate(chart, {
+    dark: true
   })
 }
 
+document.addEventListener('ChangeColorMode', function (e) {
+  apexChartUpdate(chart, e.detail)
+})
+}
 //box-chart-3
-
 if(document.querySelectorAll('#iq-chart-box3').length){
-  const options = {
+  var options = {
     series: [{
-      name: "Total Classon",
+      name: "Desktops",
       data: [10, 10, 35, 10]
   }],
-    colors: ["#07750b"],
     chart: {
-    height: 50,
-    width: 100,
-    type: 'line',
-    sparkline: {
-        enabled: true,
-    },
+      height: 60,
+      width: 100,
+      type: 'line',
     zoom: {
       enabled: false
-    }
+    },
+    sparkline: {
+      enabled: true,
+  }
   },
+  colors:['#17904b'],
   dataLabels: {
     enabled: false
   },
   stroke: {
     curve: 'straight'
   },
-  title: {
-    text: '',
-    align: 'left'
-  },
-  
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar'],
-  },
-  tooltip:{
-    enabled: false,
+    categories: ['Jan', 'Feb', 'Mar', 'Apr'],
   }
   };
 
   const chart = new ApexCharts(document.querySelector("#iq-chart-box3"), options);
   chart.render();
-  const body = document.querySelector('body')
-  if (body.classList.contains('dark')) {
-    apexChartUpdate(chart, {
-      dark: true
-    })
-  }
-
-  document.addEventListener('ChangeColorMode', function (e) {
-    apexChartUpdate(chart, e.detail)
-  })
 }
-
 //box-chart-4
-
 if(document.querySelectorAll('#iq-chart-box4').length){
-  const options = {
+  var options = {
     series: [{
-      name: "Total Profit",
+      name: "Desktops",
       data: [10, 10, 35, 10]
   }],
-    colors: ["#d48918"],
     chart: {
-    height: 50,
-    width: 100,
-    type: 'line',
-    sparkline: {
-        enabled: true,
-    },
+      height: 60,
+      width: 100,
+      type: 'line',
     zoom: {
       enabled: false
-    }
+    },
+    sparkline: {
+      enabled: true,
+  }
   },
+  colors:['#d95f18'],
   dataLabels: {
     enabled: false
   },
   stroke: {
     curve: 'straight'
   },
-  title: {
-    text: '',
-    align: 'left'
-  },
-
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar'],
-  },
-  tooltip:{
-    enabled: false,
+    categories: ['Jan', 'Feb', 'Mar', 'Apr'],
   }
   };
 
   const chart = new ApexCharts(document.querySelector("#iq-chart-box4"), options);
   chart.render();
-  const body = document.querySelector('body')
-  if (body.classList.contains('dark')) {
-    apexChartUpdate(chart, {
-      dark: true
-    })
-  }
-  document.addEventListener('ChangeColorMode', function (e) {
-    apexChartUpdate(chart, e.detail)
-  })
+ 
 }
 
 
@@ -751,23 +682,25 @@ document.addEventListener('ChangeColorMode', function (e) {
 }
 
 /*-------------- Ethernet Chart ----------------*/
-if (document.querySelectorAll("#ethernet-chart-01").length) {
+if (document.querySelectorAll("#ethernet-chart-01").length) { 
   const options = {
     series: [{
       name: "Desktops",
-      data: [5, 30, 6, 20, 5, 18, 10]
+       data: [5, 30, 6, 20, 5, 18, 10]
   }],
-  colors: ['#344ed1'],
+  colors: ["#3a57e8"],
     chart: {
     height: 60,
-    width: 100,
+    sparkline: {
+      enabled: true
+    },
     type: 'line',
     zoom: {
       enabled: false
     },
-    sparkline: {
-      enabled: true,
-    }
+    toolbar: {
+      show: false
+  },
   },
   dataLabels: {
     enabled: false
@@ -776,53 +709,52 @@ if (document.querySelectorAll("#ethernet-chart-01").length) {
     curve: 'smooth',
     width: 3
   },
-  title: {
-    text: '',
-    align: 'left'
+  legend: {
+    show: false
+  },
+  grid: {
+    show:false,
   },
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: {
+      show: false,
+    },
+
   },
-  tooltip: {
-    enabled: false,
+  yaxis: {
+    labels: {
+      show: false,
+    },
   }
   };
-
-  const chart = new ApexCharts(document.querySelector("#ethernet-chart-01"), options);
+  var chart = new ApexCharts(document.querySelector("#ethernet-chart-01"), options);
   chart.render();
   document.addEventListener('ColorChange', (e) => {
-  const newOpt = {colors: [e.detail.detail1], }
-  console.log(e.detail.detail1)
-  chart.updateOptions(newOpt)
-  });
-const body = document.querySelector('body')
-if (body.classList.contains('dark')) {
-  apexChartUpdate(chart, {
-    dark: true
-  })
+    const newOpt = {
+      colors: [e.detail.detail1],
+    }
+    chart.updateOptions(newOpt)
+    })
 }
-
-document.addEventListener('ChangeColorMode', function (e) {
-  apexChartUpdate(chart, e.detail)
-})
-}
-if (document.querySelectorAll("#ethernet-chart-02").length) {
+if (document.querySelectorAll("#ethernet-chart-02").length) { 
   const options = {
     series: [{
       name: "Desktops",
-      data: [5, 20, 4, 18, 3, 15, 10]
+       data: [5, 30, 6, 20, 5, 18, 10]
   }],
-  colors: ['#07750b'],
+  colors: ["#17904b"],
     chart: {
     height: 60,
-    width: 100,
+    sparkline: {
+      enabled: true
+    },
     type: 'line',
     zoom: {
       enabled: false
     },
-    sparkline: {
-      enabled: true,
-    }
+    toolbar: {
+      show: false
+  },
   },
   dataLabels: {
     enabled: false
@@ -831,48 +763,52 @@ if (document.querySelectorAll("#ethernet-chart-02").length) {
     curve: 'smooth',
     width: 3
   },
-  title: {
-    text: '',
-    align: 'left'
+  legend: {
+    show: false
+  },
+  grid: {
+    show:false,
   },
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: {
+      show: false,
+    },
+
   },
-  tooltip: {
-    enabled: false,
+  yaxis: {
+    labels: {
+      show: false,
+    },
   }
   };
-
-  const chart = new ApexCharts(document.querySelector("#ethernet-chart-02"), options);
+  var chart = new ApexCharts(document.querySelector("#ethernet-chart-02"), options);
   chart.render();
-const body = document.querySelector('body')
-if (body.classList.contains('dark')) {
-  apexChartUpdate(chart, {
-    dark: true
-  })
+  document.addEventListener('ColorChange', (e) => {
+    const newOpt = {
+      colors: [e.detail.detail2],
+    }
+    chart.updateOptions(newOpt)
+    })
 }
-
-document.addEventListener('ChangeColorMode', function (e) {
-  apexChartUpdate(chart, e.detail)
-})
-}
-if (document.querySelectorAll("#ethernet-chart-03").length) {
+if (document.querySelectorAll("#ethernet-chart-03").length) { 
   const options = {
     series: [{
       name: "Desktops",
-      data: [5, 20, 6, 18, 5, 15, 4]
+       data: [5, 30, 6, 20, 5, 18, 10]
   }],
-  colors: ['#b91d12'],
+  colors: ["#ad2d1e"],
     chart: {
     height: 60,
-    width: 100,
+    sparkline: {
+      enabled: true
+    },
     type: 'line',
     zoom: {
       enabled: false
     },
-    sparkline: {
-      enabled: true,
-    }
+    toolbar: {
+      show: false
+  },
   },
   dataLabels: {
     enabled: false
@@ -881,48 +817,52 @@ if (document.querySelectorAll("#ethernet-chart-03").length) {
     curve: 'smooth',
     width: 3
   },
-  title: {
-    text: '',
-    align: 'left'
+  legend: {
+    show: false
+  },
+  grid: {
+    show:false,
   },
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: {
+      show: false,
+    },
+
   },
-  tooltip: {
-    enabled: false,
+  yaxis: {
+    labels: {
+      show: false,
+    },
   }
   };
-
-  const chart = new ApexCharts(document.querySelector("#ethernet-chart-03"), options);
+  var chart = new ApexCharts(document.querySelector("#ethernet-chart-03"), options);
   chart.render();
-const body = document.querySelector('body')
-if (body.classList.contains('dark')) {
-  apexChartUpdate(chart, {
-    dark: true
-  })
+  document.addEventListener('ColorChange', (e) => {
+    const newOpt = {
+      colors: [e.detail.detail1],
+    }
+    chart.updateOptions(newOpt)
+    })
 }
-
-document.addEventListener('ChangeColorMode', function (e) {
-  apexChartUpdate(chart, e.detail)
-})
-}
-if (document.querySelectorAll("#ethernet-chart-04").length) {
+if (document.querySelectorAll("#ethernet-chart-04").length) { 
   const options = {
     series: [{
       name: "Desktops",
-      data: [5, 15, 3, 20, 5, 18, 13]
+       data: [5, 30, 6, 20, 5, 18, 10]
   }],
-  colors: ['#d48918'],
+  colors: ["#d95f18"],
     chart: {
     height: 60,
-    width: 100,
+    sparkline: {
+      enabled: true
+    },
     type: 'line',
     zoom: {
       enabled: false
     },
-    sparkline: {
-      enabled: true,
-    }
+    toolbar: {
+      show: false
+  },
   },
   dataLabels: {
     enabled: false
@@ -931,32 +871,33 @@ if (document.querySelectorAll("#ethernet-chart-04").length) {
     curve: 'smooth',
     width: 3
   },
-  title: {
-    text: '',
-    align: 'left'
+  legend: {
+    show: false
+  },
+  grid: {
+    show:false,
   },
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: {
+      show: false,
+    },
+
   },
-  tooltip: {
-    enabled: false,
+  yaxis: {
+    labels: {
+      show: false,
+    },
   }
   };
-
-  const chart = new ApexCharts(document.querySelector("#ethernet-chart-04"), options);
+  var chart = new ApexCharts(document.querySelector("#ethernet-chart-04"), options);
   chart.render();
-const body = document.querySelector('body')
-if (body.classList.contains('dark')) {
-  apexChartUpdate(chart, {
-    dark: true
-  })
+  document.addEventListener('ColorChange', (e) => {
+    const newOpt = {
+      colors: [e.detail.detail1],
+    }
+    chart.updateOptions(newOpt)
+    })
 }
-
-document.addEventListener('ChangeColorMode', function (e) {
-  apexChartUpdate(chart, e.detail)
-})
-}
-
 /*-------------- Ethernet Chart End ----------------*/
 if (document.querySelectorAll("#chart-9").length) {
   const options = {

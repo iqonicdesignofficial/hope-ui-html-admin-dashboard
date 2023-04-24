@@ -1,0 +1,40 @@
+{{!-- layouts/layout.hbs --}}
+<!doctype html>
+<html lang="en" dir="ltr" class="landing-pages">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>{{ appName }} | Responsive Bootstrap 5 Admin Dashboard Template</title>
+      {{> partials/dashboard/head }}
+      {{> modules/landing-pages/components/partials/head }}
+      {{#block "head"}}
+        {{!-- External page head section--}}
+      {{/block}}
+  </head>
+  <body class="{{bodyClass}} body-bg landing-pages">
+    <!-- loader Start -->
+    <div id="loading">
+      {{> partials/dashboard/loader }}
+    </div>
+    <!-- loader END -->
+    <main class="main-content">
+      <div class="position-relative">
+        <!--Nav Start-->
+            {{> modules/landing-pages/components/partials/header-2  }}
+        <!--Nav End-->
+      </div>
+        {{#block "content"}}
+        {{/block}}
+
+    </main>
+    <!-- Wrapper End-->
+         {{!-- {{> modules/landing-pages/components/partials/footer-one  }} --}}
+         {{!-- {{> modules/landing-pages/components/partials/footer-two }} --}}
+         {{> modules/landing-pages/components/partials/footer}}
+
+    {{> partials/dashboard/scripts }}
+     {{> modules/landing-pages/components/partials/scripts  }}
+    {{#block "scripts"}}
+    {{/block}}
+  </body>
+</html>

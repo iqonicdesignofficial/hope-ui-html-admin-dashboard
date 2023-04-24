@@ -1,5 +1,8 @@
+// const gulp = require('gulp')
+// const npmDist = require('gulp-npm-dist')
+// const config = require('../gulp.config.json')
+// const {argv} = require('yargs')
 const gulp = require('gulp')
-const npmDist = require('gulp-npm-dist')
 const config = require('../gulp.config.json')
 const {argv} = require('yargs')
 

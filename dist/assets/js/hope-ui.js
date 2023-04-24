@@ -12,12 +12,14 @@ Index Of Script
 
 ------- Plugin Init --------
 
-:: Tooltip
+:: Sticky-Nav
 :: Popover
+:: Tooltip
 :: Circle Progress
+:: Progress Bar
 :: NoUiSlider
 :: CopyToClipboard
-:: Vanila Datepicker
+:: CounterUp 2
 :: SliderTab
 :: Data Tables
 :: Active Class for Pricing Table
@@ -25,8 +27,8 @@ Index Of Script
 
 ------ Functions --------
 
-:: Loader Init
 :: Resize Plugins
+:: Loader Init
 :: Sidebar Toggle
 :: Back To Top
 
@@ -34,6 +36,9 @@ Index Of Script
 
 :: DOMContentLoaded
 :: Window Resize
+:: DropDown
+:: Form Validation
+:: Flatpickr
 ------------------------------------------------
 Index Of Script
 ----------------------------------------------*/
@@ -41,79 +46,71 @@ Index Of Script
 /*---------------------------------------------------------------------
               Sticky-Nav
 -----------------------------------------------------------------------*/
-window.addEventListener('scroll', function() {
- let yOffset = document.documentElement.scrollTop;
-  let navbar =  document.querySelector(".navs-sticky")
+window.addEventListener('scroll', function () {
+  let yOffset = document.documentElement.scrollTop;
+  let navbar = document.querySelector(".navs-sticky")
   if (navbar !== null) {
     if (yOffset >= 100) {
-        navbar.classList.add("menu-sticky");
+      navbar.classList.add("menu-sticky");
     } else {
-        navbar.classList.remove("menu-sticky");
+      navbar.classList.remove("menu-sticky");
     }
   }
 });
 /*---------------------------------------------------------------------
               Popover
 -----------------------------------------------------------------------*/
-
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-if(typeof bootstrap !== typeof undefined) {
+if (typeof bootstrap !== typeof undefined) {
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
   })
 }
-
 /*---------------------------------------------------------------------
                 Tooltip
 -----------------------------------------------------------------------*/
-
-if(typeof bootstrap !== typeof undefined) {
+if (typeof bootstrap !== typeof undefined) {
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   })
-  
+
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-sidebar-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   })
 }
-
-
-
 /*---------------------------------------------------------------------
               Circle Progress
 -----------------------------------------------------------------------*/
-
 const progressBar = document.getElementsByClassName('circle-progress')
-if(typeof progressBar !== typeof undefined) {
+if (typeof progressBar !== typeof undefined) {
   Array.from(progressBar, (elem) => {
     const minValue = elem.getAttribute('data-min-value')
     const maxValue = elem.getAttribute('data-max-value')
     const value = elem.getAttribute('data-value')
-    const  type = elem.getAttribute('data-type')
+    const type = elem.getAttribute('data-type')
     if (elem.getAttribute('id') !== '' && elem.getAttribute('id') !== null) {
-      new CircleProgress('#'+elem.getAttribute('id'), {
+      new CircleProgress('#' + elem.getAttribute('id'), {
         min: minValue,
         max: maxValue,
         value: value,
         textFormat: type,
-    });
+      });
     }
   })
 }
-
 /*---------------------------------------------------------------------
-Progress Bar
+              Progress Bar
 -----------------------------------------------------------------------*/
 const progressBarInit = (elem) => {
   const currentValue = elem.getAttribute('aria-valuenow')
   elem.style.width = '0%'
   elem.style.transition = 'width 2s'
   if (typeof Waypoint !== typeof undefined) {
-    new Waypoint( {
+    new Waypoint({
       element: elem,
-      handler: function() { 
+      handler: function () {
         setTimeout(() => {
           elem.style.width = currentValue + '%'
         }, 100);
@@ -122,51 +119,45 @@ const progressBarInit = (elem) => {
     })
   }
 }
-
 const customProgressBar = document.querySelectorAll('[data-toggle="progress-bar"]')
 Array.from(customProgressBar, (elem) => {
   progressBarInit(elem)
 })
-
 /*---------------------------------------------------------------------
                  noUiSlider
 -----------------------------------------------------------------------*/
-
 const rangeSlider = document.querySelectorAll('.range-slider');
-
 Array.from(rangeSlider, (elem) => {
-  if(typeof noUiSlider !== typeof undefined) {
+  if (typeof noUiSlider !== typeof undefined) {
     noUiSlider.create(elem, {
       start: [20, 80],
       connect: true,
       range: {
-          'min': 0,
-          'max': 100
+        'min': 0,
+        'max': 100
       }
     })
   }
 })
 
 const slider = document.querySelectorAll('.slider');
-
 Array.from(slider, (elem) => {
-  if(typeof noUiSlider !== typeof undefined) {
+  if (typeof noUiSlider !== typeof undefined) {
     noUiSlider.create(elem, {
       start: 50,
       connect: [true, false],
       range: {
-          'min': 0,
-          'max': 100
+        'min': 0,
+        'max': 100
       }
     })
   }
 })
-
 /*---------------------------------------------------------------------
               Copy To Clipboard
 -----------------------------------------------------------------------*/
 const copy = document.querySelectorAll('[data-toggle="copy"]')
-if(typeof copy !== typeof undefined) {
+if (typeof copy !== typeof undefined) {
   Array.from(copy, (elem) => {
     elem.addEventListener('click', (e) => {
       const target = elem.getAttribute("data-copy-target");
@@ -192,27 +183,11 @@ if(typeof copy !== typeof undefined) {
 }
 
 /*---------------------------------------------------------------------
-              Vanila Datepicker
------------------------------------------------------------------------*/
-const datepickers = document.querySelectorAll('.vanila-datepicker')
-Array.from(datepickers, (elem) => {
-  if(typeof Datepicker !== typeof undefined) {
-    new Datepicker(elem)
-  }
-})
-const daterangePickers = document.querySelectorAll('.vanila-daterangepicker')
-Array.from(daterangePickers, (elem) => {
-  if(typeof Datepicker !== typeof undefined) {
-    new DateRangePicker(elem)
-  }
-})
-
-/*---------------------------------------------------------------------
               CounterUp 2
 -----------------------------------------------------------------------*/
 if (window.counterUp !== undefined) {
   const counterUp = window.counterUp["default"];
-  const counterUp2 = document.querySelectorAll( '.counter' )
+  const counterUp2 = document.querySelectorAll('.counter')
   Array.from(counterUp2, (el) => {
     if (typeof Waypoint !== typeof undefined) {
       const waypoint = new Waypoint({
@@ -229,11 +204,9 @@ if (window.counterUp !== undefined) {
     }
   })
 }
-
 /*---------------------------------------------------------------------
               SliderTab
 -----------------------------------------------------------------------*/
-
 Array.from(document.querySelectorAll('[data-toggle="slider-tab"]'), (elem) => {
   if (typeof SliderTab !== typeof undefined) {
     new SliderTab(elem)
@@ -253,30 +226,29 @@ if (typeof Scrollbar !== typeof null) {
 /*---------------------------------------------------------------------
   Data tables
 -----------------------------------------------------------------------*/
-if($.fn.DataTable){
-  if($('[data-toggle="data-table"]').length) {
+if ($.fn.DataTable) {
+  if ($('[data-toggle="data-table"]').length) {
     const table = $('[data-toggle="data-table"]').DataTable({
       "dom": '<"row align-items-center"<"col-md-6" l><"col-md-6" f>><"table-responsive border-bottom my-3" rt><"row align-items-center" <"col-md-6" i><"col-md-6" p>><"clear">',
     });
   }
 }
-
 /*---------------------------------------------------------------------
   Active Class for Pricing Table
 -----------------------------------------------------------------------*/
 const tableTh = document.querySelectorAll('#my-table tr th')
 const tableTd = document.querySelectorAll('#my-table td')
-if(tableTh !== null) {
+if (tableTh !== null) {
   Array.from(tableTh, (elem) => {
-    elem.addEventListener('click',(e) => {
+    elem.addEventListener('click', (e) => {
       Array.from(tableTh, (th) => {
-        if(th.children.length) {
+        if (th.children.length) {
           th.children[0].classList.remove('active')
         }
       })
       elem.children[0].classList.add('active')
       Array.from(tableTd, (td) => td.classList.remove('active'))
-      
+
       const col = Array.prototype.indexOf.call(document.querySelector('#my-table tr').children, elem);
       const tdIcons = document.querySelectorAll("#my-table tr td:nth-child(" + parseInt(col + 1) + ")");
       Array.from(tdIcons, (td) => td.classList.add('active'))
@@ -286,11 +258,10 @@ if(tableTh !== null) {
 /*---------------------------------------------------------------------
               AOS Animation Plugin
 -----------------------------------------------------------------------*/
-
-if(typeof AOS !== typeof undefined ) {
+if (typeof AOS !== typeof undefined) {
   AOS.init({
     startEvent: 'DOMContentLoaded',
-    disable:  function() {
+    disable: function () {
       var maxWidth = 996;
       return window.innerWidth < maxWidth;
     },
@@ -300,11 +271,9 @@ if(typeof AOS !== typeof undefined ) {
     offset: 10
   });
 }
-
 /*---------------------------------------------------------------------
               Resize Plugins
 -----------------------------------------------------------------------*/
-
 const resizePlugins = () => {
   // sidebar-mini
   const tabs = document.querySelectorAll('.nav')
@@ -315,9 +284,9 @@ const resizePlugins = () => {
         elem.classList.add('flex-column', 'on-resize');
       }
     })
-    if(sidebarResponsive !== null) {
+    if (sidebarResponsive !== null) {
       if (!sidebarResponsive.classList.contains('sidebar-mini')) {
-        sidebarResponsive.classList.add('sidebar-mini','on-resize')
+        sidebarResponsive.classList.add('sidebar-mini', 'on-resize')
       }
     }
   } else {
@@ -326,19 +295,16 @@ const resizePlugins = () => {
         elem.classList.remove('flex-column', 'on-resize');
       }
     })
-    if(sidebarResponsive !== null) {
+    if (sidebarResponsive !== null) {
       if (sidebarResponsive.classList.contains('sidebar-mini') && sidebarResponsive.classList.contains('on-resize')) {
-        sidebarResponsive.classList.remove('sidebar-mini','on-resize')
+        sidebarResponsive.classList.remove('sidebar-mini', 'on-resize')
       }
     }
   }
 }
-
-
 /*---------------------------------------------------------------------
               LoaderInit
 -----------------------------------------------------------------------*/
-
 const loaderInit = () => {
   const loader = document.querySelector('.loader')
   setTimeout(() => {
@@ -348,7 +314,6 @@ const loaderInit = () => {
     }, 500)
   }, 500)
 }
-
 /*---------------------------------------------------------------------
               Sidebar Toggle
 -----------------------------------------------------------------------*/
@@ -380,31 +345,27 @@ if (sidebar !== null) {
 Array.from(sidebarToggleBtn, (sidebarBtn) => {
   sidebarToggle(sidebarBtn)
 })
-
-/*------------------------
-Back To Top
---------------------------*/
+/*---------------------------------------------------------------------------
+                            Back To Top
+----------------------------------------------------------------------------*/
 const backToTop = document.getElementById("back-to-top")
-console.log(backToTop)
-if( backToTop !== null && backToTop !== undefined ) {
-  document.getElementById("back-to-top").classList.add("animate__animated","animate__fadeOut")
+if (backToTop !== null && backToTop !== undefined) {
+  document.getElementById("back-to-top").classList.add("animate__animated", "animate__fadeOut")
   window.addEventListener('scroll', (e) => {
-  if (document.documentElement.scrollTop > 250) {
-    document.getElementById("back-to-top").classList.remove("animate__fadeOut")
-    document.getElementById("back-to-top").classList.add("animate__fadeIn")
-  }else {
-    document.getElementById("back-to-top").classList.remove("animate__fadeIn")
-    document.getElementById("back-to-top").classList.add("animate__fadeOut")
-  }
-})
-// scroll body to 0px on click
-document.querySelector('#top').addEventListener('click', (e) => {
-  e.preventDefault()
-  window.scrollTo({top: 0, behavior: 'smooth'});
-})
+    if (document.documentElement.scrollTop > 250) {
+      document.getElementById("back-to-top").classList.remove("animate__fadeOut")
+      document.getElementById("back-to-top").classList.add("animate__fadeIn")
+    } else {
+      document.getElementById("back-to-top").classList.remove("animate__fadeIn")
+      document.getElementById("back-to-top").classList.add("animate__fadeOut")
+    }
+  })
+  // scroll body to 0px on click
+  document.querySelector('#top').addEventListener('click', (e) => {
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  })
 }
-
-
 /*---------------------------------------------------------------------
               DOMContentLoaded
 -----------------------------------------------------------------------*/
@@ -412,91 +373,142 @@ document.addEventListener('DOMContentLoaded', (event) => {
   resizePlugins()
   loaderInit()
 });
-
 /*---------------------------------------------------------------------
               Window Resize
 -----------------------------------------------------------------------*/
-
-window.addEventListener('resize', function(event) {
+window.addEventListener('resize', function (event) {
   resizePlugins()
 });
-
-/*-------------------------------
+/*---------------------------------------------------------------------
 | | | | | DropDown
---------------------------------*/
-
-function darken_screen(yesno){
-  if( yesno == true ){
+-----------------------------------------------------------------------*/
+function darken_screen(yesno) {
+  if (yesno == true) {
     if (document.querySelector('.screen-darken') !== null) {
       document.querySelector('.screen-darken').classList.add('active');
     }
   }
-  else if(yesno == false){
+  else if (yesno == false) {
     if (document.querySelector('.screen-darken') !== null) {
       document.querySelector('.screen-darken').classList.remove('active');
     }
   }
 }
-	
-function close_offcanvas(){
+function close_offcanvas() {
   darken_screen(false);
   if (document.querySelector('.mobile-offcanvas.show') !== null) {
     document.querySelector('.mobile-offcanvas.show').classList.remove('show');
     document.body.classList.remove('offcanvas-active');
   }
 }
-
-function show_offcanvas(offcanvas_id){
+function show_offcanvas(offcanvas_id) {
   darken_screen(true);
-  if(document.getElementById(offcanvas_id) !== null) {
+  if (document.getElementById(offcanvas_id) !== null) {
     document.getElementById(offcanvas_id).classList.add('show');
     document.body.classList.add('offcanvas-active');
   }
 }
-
-document.addEventListener("DOMContentLoaded", function(){
-  document.querySelectorAll('[data-trigger]').forEach(function(everyelement){
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('[data-trigger]').forEach(function (everyelement) {
     let offcanvas_id = everyelement.getAttribute('data-trigger');
     everyelement.addEventListener('click', function (e) {
       e.preventDefault();
-          show_offcanvas(offcanvas_id);
+      show_offcanvas(offcanvas_id);
     });
   });
-  if(document.querySelectorAll('.btn-close')) {
-    document.querySelectorAll('.btn-close').forEach(function(everybutton){
-      everybutton.addEventListener('click', function (e) { 
-            close_offcanvas();
-        });
+  if (document.querySelectorAll('.btn-close')) {
+    document.querySelectorAll('.btn-close').forEach(function (everybutton) {
+      everybutton.addEventListener('click', function (e) {
+        close_offcanvas();
+      });
     });
   }
-  if(document.querySelector('.screen-darken')) {
-    document.querySelector('.screen-darken').addEventListener('click', function(event){
+  if (document.querySelector('.screen-darken')) {
+    document.querySelector('.screen-darken').addEventListener('click', function (event) {
       close_offcanvas();
     });
   }
 });
-if (document.querySelector('#navbarSideCollapse'))  {
+if (document.querySelector('#navbarSideCollapse')) {
   document.querySelector('#navbarSideCollapse').addEventListener('click', function () {
     document.querySelector('.offcanvas-collapse').classList.toggle('open')
   })
 }
-
 /*---------------------------------------------------------------------
-Form Validation
+                                   Form Validation
 -----------------------------------------------------------------------*/
-
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
+window.addEventListener('load', function () {
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.getElementsByClassName('needs-validation');
+  // Loop over them and prevent submission
+  var validation = Array.prototype.filter.call(forms, function (form) {
+    form.addEventListener('submit', function (event) {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
 }, false);
+
+(function () {
+  /*----------------------------------------------------------
+                             Flatpickr
+  -------------------------------------------------------------*/
+  const date_flatpickr = document.querySelectorAll('.date_flatpicker')
+  Array.from(date_flatpickr, (elem) => {
+    if (typeof flatpickr !== typeof undefined) {
+      flatpickr(elem, {
+        minDate: "today",
+        dateFormat: "Y-m-d",
+      })
+    }
+  })
+  /*----------Range Flatpickr--------------*/
+  const range_flatpicker = document.querySelectorAll('.range_flatpicker')
+  Array.from(range_flatpicker, (elem) => {
+    if (typeof flatpickr !== typeof undefined) {
+      flatpickr(elem, {
+        mode: "range",
+        minDate: "today",
+        dateFormat: "Y-m-d",
+      })
+    }
+  })
+  /*------------Wrap Flatpickr---------------*/
+  const wrap_flatpicker = document.querySelectorAll('.wrap_flatpicker')
+  Array.from(wrap_flatpicker, (elem) => {
+    if (typeof flatpickr !== typeof undefined) {
+      flatpickr(elem, {
+        wrap: true,
+        minDate: "today",
+        dateFormat: "Y-m-d",
+      })
+    }
+  })
+  /*-------------Time Flatpickr---------------*/
+  const time_flatpickr = document.querySelectorAll('.time_flatpicker')
+  Array.from(time_flatpickr, (elem) => {
+    if (typeof flatpickr !== typeof undefined) {
+      flatpickr(elem, {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+      })
+    }
+  })
+  /*-------------Inline Flatpickr-----------------*/
+  const inline_flatpickr = document.querySelectorAll('.inline_flatpickr')
+  Array.from(inline_flatpickr, (elem) => {
+    if (typeof flatpickr !== typeof undefined) {
+      flatpickr(elem, {
+        inline: true,
+        minDate: "today",
+        dateFormat: "Y-m-d",
+      })
+    }
+  })
+
+})();

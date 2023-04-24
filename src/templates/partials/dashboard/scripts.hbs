@@ -30,3 +30,15 @@
 
 <!-- App Script -->
 <script src="{{path}}assets/js/hope-ui.js" defer></script>
+
+{{#compare isFlatpickr '==' 'true'}}
+<!-- Flatpickr Script -->
+<script src="{{path}}assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
+<script src="{{path}}assets/js/plugins/flatpickr.js" defer></script>
+
+{{/compare}}
+
+{{#compare isSwiperSlider '==' 'true'}}
+<!-- SwiperSlider Script -->
+<script src="{{path}}assets/vendor/swiperSlider/swiper-bundle.min.js"></script>
+{{/compare}}

@@ -1,0 +1,46 @@
+{{#extend 'modules/landing-pages/layouts/default' title="shop" active="shop" isHeader1="true"  isFooter="true" path="../" isBanner="false" isSwiperSlider="true"}}
+{{#content "content"}}
+{{> modules/landing-pages/components/widgets/sub-header subTitle="Shop" subBreadcrume="Shop"}}
+
+<div class="section-padding">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Casual Shoes" productImage="shop/01.jpg" product-rating="0"  product-price="$15.00"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Biker's Jacket" productImage="shop/02.jpg" product-rating="3.5" product-price="$18.00" statusDetails="Sale!" statusColor="success"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Knitted Shrug" productImage="shop/03.jpg" product-rating="3.5"  product-price="$18.00" statusDetails="New" statusColor="primary"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Blue Handbag" productImage="shop/04.jpg" product-rating="0"  product-price="$55.00"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Pink Sweater" productImage="shop/05.jpg" product-rating="0"  product-price="$16.00" statusDetails="Sold" statusColor="warning"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Pink Handbag" productImage="shop/06.jpg" product-rating="0"  product-price="$42.00"  statusColor="success"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Pink Handbag" productImage="shop/07.jpg" product-rating="0"  product-price="$45.00"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Pink Handbag" productImage="shop/08.jpg" product-rating="0"  product-price="$45.00" statusDetails="Sale!" statusColor="success"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Pink Handbag" productImage="shop/09.jpg" product-rating="0"  product-price="$45.00"  statusColor="success" className="mb-lg-0"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Pink Handbag" productImage="shop/10.jpg" product-rating="0"  product-price="$18.00" statusDetails="Sale!" statusColor="success" className="mb-lg-0"}}
+            </div>
+            <div class="col">
+                {{> modules/landing-pages/components/widgets/shop-card product-name="Pink Handbag" productImage="shop/11.jpg" product-rating="0"  product-price="$25.00"  statusColor="success" className=" mb-lg-0"}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{/content}}
+{{/extend}}

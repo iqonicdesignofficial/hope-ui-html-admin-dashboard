@@ -1,0 +1,184 @@
+{{!-- <nav class="navbar navbar-expand-md navbar-light main-nav px-3">
+  <div class="container-fluid navbar-inner d-flex justify-between">
+    <a
+      href="{{path}}dashboard/index.html"
+      class="navbar-brand d-lg-none d-flex"
+    >
+      <svg
+        class="icon-30 text-primary"
+        width="30"
+        viewBox="0 0 30 30"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="-0.757324"
+          y="19.2427"
+          width="28"
+          height="4"
+          rx="2"
+          transform="rotate(-45 -0.757324 19.2427)"
+          fill="currentColor"
+        ></rect>
+        <rect
+          x="7.72803"
+          y="27.728"
+          width="28"
+          height="4"
+          rx="2"
+          transform="rotate(-45 7.72803 27.728)"
+          fill="currentColor"
+        ></rect>
+        <rect
+          x="10.5366"
+          y="16.3945"
+          width="16"
+          height="4"
+          rx="2"
+          transform="rotate(45 10.5366 16.3945)"
+          fill="currentColor"
+        ></rect>
+        <rect
+          x="10.5562"
+          y="-0.556152"
+          width="28"
+          height="4"
+          rx="2"
+          transform="rotate(45 10.5562 -0.556152)"
+          fill="currentColor"
+        ></rect>
+      </svg>
+      <h5 class="logo-title ms-3">{{appName}}</h5>
+    </a>
+    <button
+      class="btn btn-primary d-md-none d-sm-block"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasResponsive"
+      aria-controls="offcanvasResponsive"
+    >
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="offcanvasResponsive">
+      <ul class=" navbar-nav iq-nav-menu list-unstyled">
+                <li class="nav-item">
+                    <a class="nav-link menu-arrow justify-content-start" href="#" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="homeData">Home</a>
+                     <ul class="iq-header-sub-menu list-unstyled collapse" id="homeData">
+                      <li><a href="index.html">App Landing</a></li>
+                      <li><a href="ecommerce.html">Ecommerce Landing</a></li>
+                      <li><a href="sass-landing-page.html">saas Marketing Landing</a></li>
+                      <li><a href="software-landing-page.html">Software Landing</a></li>
+                      <li><a href="startup-landing.html">startup Landing</a></li>
+                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">about us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="feature.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pricing.html">Pricing</a>
+                </li>
+            </ul>
+      <a
+        href="{{path}}dashboard/index.html"
+        class="navbar-brand d-none d-xl-flex d-lg-flex"
+      >
+        <svg
+          class="icon-30 text-primary"
+          width="30"
+          viewBox="0 0 30 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="-0.757324"
+            y="19.2427"
+            width="28"
+            height="4"
+            rx="2"
+            transform="rotate(-45 -0.757324 19.2427)"
+            fill="currentColor"
+          ></rect>
+          <rect
+            x="7.72803"
+            y="27.728"
+            width="28"
+            height="4"
+            rx="2"
+            transform="rotate(-45 7.72803 27.728)"
+            fill="currentColor"
+          ></rect>
+          <rect
+            x="10.5366"
+            y="16.3945"
+            width="16"
+            height="4"
+            rx="2"
+            transform="rotate(45 10.5366 16.3945)"
+            fill="currentColor"
+          ></rect>
+          <rect
+            x="10.5562"
+            y="-0.556152"
+            width="28"
+            height="4"
+            rx="2"
+            transform="rotate(45 10.5562 -0.556152)"
+            fill="currentColor"
+          ></rect>
+        </svg>
+        <h5 class="logo-title ms-3">{{appName}}</h5>
+      </a>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Faq</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> --}}
+
+<nav class="nav navbar navbar-expand-xl navbar-light iq-navbar">
+  <div class="container-fluid navbar-inner">
+    <div class="d-flex align-items-center justify-content-between w-100 landing-header">
+       <button data-trigger="navbar_main" class="d-xl-none btn btn-primary rounded-pill p-1 pt-0" type="button">
+        <svg width="20px" class="icon-20" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+      </svg>
+      </button>
+       {{> modules/landing-pages/components/partials/horizontal-nav  }}
+        <a href="../dashboard/index.html" class="navbar-brand m-0">
+            <!--Logo start-->
+            <svg class="icon-30 text-primary" width="30" class="text-primary" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="-0.757324" y="19.2427" width="28" height="4" rx="2" transform="rotate(-45 -0.757324 19.2427)" fill="currentColor"></rect>
+                <rect x="7.72803" y="27.728" width="28" height="4" rx="2" transform="rotate(-45 7.72803 27.728)" fill="currentColor"></rect>
+                <rect x="10.5366" y="16.3945" width="16" height="4" rx="2" transform="rotate(45 10.5366 16.3945)" fill="currentColor"></rect>
+                <rect x="10.5562" y="-0.556152" width="28" height="4" rx="2" transform="rotate(45 10.5562 -0.556152)" fill="currentColor"></rect>
+            </svg>
+            <!--logo End-->        <h5 class="logo-title">Hope UI</h5>
+        </a>
+      <ul class=" navbar-nav  align-items-center navbar-list d-none d-xl-flex">
+        <li class="nav-item"><a class="nav-link {{#compare active '==' 'blog'}}active{{/compare}}" href="{{path}}landing-pages/blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link {{#compare active '==' 'shop'}}active{{/compare}}" href="{{path}}landing-pages/shop.html"> Shop</a></li>
+        <li class="nav-item"><a class="nav-link {{#compare active '==' 'faq'}}active{{/compare}}" href="{{path}}landing-pages/faq.html">Faq</a></li>
+        <li class="nav-item"><a class="nav-link {{#compare active '==' 'contact-us'}}active{{/compare}}" href="{{path}}landing-pages/contact-us.html">Contact Us</a></li>
+      </ul>
+     </div>
+  </div>
+</nav>

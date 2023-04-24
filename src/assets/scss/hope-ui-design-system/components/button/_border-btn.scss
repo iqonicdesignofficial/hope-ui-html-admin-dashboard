@@ -11,15 +11,17 @@
     }
     &.active {
         border-color: $primary;
+        color: $white;
+        background-color: $primary;
     }
 }
 
 .btn {
     &.btn-border {
-        @include button-outline-variant($secondary);
+        @include button-outline-variant($gray);
         border: $border-width * 2 solid $border-color;
         padding: $spacer*.5 $spacer;
-        border-color: $secondary;
+        border-color: $border-color;
         &:hover {
             background: transparent;
             border-color: var(--bs-primary);

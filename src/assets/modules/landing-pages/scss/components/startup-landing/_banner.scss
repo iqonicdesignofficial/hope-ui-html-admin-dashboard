@@ -1,0 +1,38 @@
+.banner-two{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 89%);
+    background-color: $secondary;
+    padding: 6.25rem 0rem 6.25rem 0rem;
+}
+.contact-box{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 89%);
+    background-color: $secondary;
+
+}
+.custom-icon {
+    width: 150px;
+    height: 150px;
+    background: $white;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    &:hover{
+        background: $primary;
+        transition: 300ms ease-in-out;
+        path{
+            fill: $white !important;
+        }
+    }
+}
+
+.contact-landing{
+    background: $secondary;
+    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 100%, 0 24%);
+}
+
+
+
+@media screen and (max-width: 1025px){
+    .contact-landing {
+        clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%, 0 24%);
+    }
+}

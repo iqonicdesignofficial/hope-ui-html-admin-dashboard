@@ -1,0 +1,197 @@
+{{#extend layout isBanner="true" title="Flatpicker" active="flatpickr" isFlatpickr="true" path="../../" }}
+{{#content "content"}}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                    <div class="d-flex flex-wrap align-items-center">
+                        <div class="d-flex flex-wrap align-items-center mb-3 mb-sm-0">
+                            <h4 class="me-2 h4">Flatpickr</h4>
+                        </div>
+                    </div>
+                    <small>For more Information regarding Flatpickr Plugin refer
+                        <a href="https://flatpickr.js.org/examples/">Documentation</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Basic Date Time</h4>
+                    <p> flatpickr without any config</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <input class="form-control flatpickr_datetime" type="text" placeholder="Select Date time.."
+                    readonly="readonly">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Selecting multiple dates</h4>
+                    <p> It is possible to select multiple dates.</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <input class="form-control flatpickr_multidate" type="text" placeholder="Select Date.."
+                    data-id="multiple" readonly="readonly">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">minDate</h4>
+                    <p> minDate option specifies the minimum/earliest date (inclusively) allowed for selection.
+
+                    </p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <input class="form-control flatpickr_minDate" type="text" placeholder="Select Date.." data-id="minDate"
+                    readonly="readonly">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">maxDate</h4>
+                    <p> maxDate option specifies the maximum/latest date (inclusively) allowed for selection.</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <input class="form-control flatpickr_maxDate" type="text" placeholder="Select Date.."
+                    data-id="maxDateStr" readonly="readonly">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Disabling Specific dates</h4>
+                    <p> If you’d like to make certain dates unavailable for selection</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <input class="form-control flatpickr_specificdisable" type="text" placeholder="Select Date.."
+                    data-id="disableSpecific" readonly="readonly">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Time_picker</h4>
+                    <p> Time pickers allow users to enter a specific Time value .</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <div class="form-group">
+                    <input type="text" name="start" class="form-control flatpickrtime" placeholder="Select Time ">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Disabling all dates except select few</h4>
+                    <p> This is the enable option, which takes in an array of date strings, date ranges and functions.
+                        Essentially the same as the disable option above, but reversed.
+
+                    </p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <input class="form-control flatpickr_disableexcept" type="text" placeholder="Select Date.."
+                    data-id="enableSpecific" readonly="readonly">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Human-friendly Dates</h4>
+                    <p> Upon date selection, the original input will contain a Y-m-d... string, while the altInput will
+                        display the date in a more legible, customizable format.</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <input class="form-control flatpickr_humandate " placeholder="Select Date.." tabindex="0" type="text"
+                    readonly="readonly">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Range Calendar</h4>
+                    <p> Select a range of dates using the range calendar.</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <div class="form-group">
+                    <input type="text" name="start" class="form-control flatpickrrange" placeholder="Select Date ">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title"> Date Picker</h4>
+                    <p> Date pickers allow users to enter a specific date . </p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <div class="form-group">
+                    <input type="text" class="form-control flatpickrdate" placeholder="Select Date... ">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{{/content}}
+{{/extend}}

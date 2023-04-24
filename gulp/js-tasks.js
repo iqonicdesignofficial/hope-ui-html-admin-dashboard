@@ -1,51 +1,64 @@
+"use strict";
+// Packages
 const gulp = require('gulp')
-const terser = require('terser');
-const gulpTerser = require('gulp-terser');
-const wait = require('gulp-wait')
-const concat = require('gulp-concat')
 const config = require('../gulp.config.json')
-const {argv} = require('yargs')
+const gulpHelper = require('./helper')
+const paths = gulpHelper.mergedModules()
 
-let directory = argv.output
-if (directory === undefined) {
-    directory = config.output
+// Main js move task
+gulp.task('js:move-main', () => {
+    const obj = gulpHelper.find(paths, 'default')
+    return gulpHelper.moveJs(obj.js, obj.dir)
+})
+
+// landing-pages js move task
+gulp.task('js:move-landing-pages', () => {
+    const obj = gulpHelper.find(paths, 'landing-pages')
+    return gulpHelper.moveJs(obj.js, obj.dir)
+})
+
+// function for generate js move task array based on module is generate or not
+function jsMoveTask() {
+    const task = ['js:move-main']
+    for (let index = 0; index < paths.length; index++) {
+        const object = paths[index];
+        if(object.generate) {
+            task.push(`js:move-${object.name}`)
+        }
+    }
+    return task
 }
 
-gulp.task('js-move', function () {
-    let paths = []
-    paths.push('./src/assets/js/**/*.js');
-    return gulp.src(paths)
-        .pipe(gulp.dest(`./${directory}/assets/js`));
-});
+// Iqonic js move task
+gulp.task('js:move-iqonic', () => {
+  const obj = gulpHelper.find(paths, 'default')
+  return gulpHelper.uglify(['src/assets/js/iqonic-script/*.js'], obj.dir)
+})
 
-function jsTask(scripts, filename) {
-    let paths = []
-    scripts.forEach((js) => {
-        paths.push(js.replace('{directory}', directory))
-    })
-    return gulp.src(paths)
-            .pipe(wait(500))
-            .pipe(concat(filename))
-            .pipe(gulpTerser({}, terser.minify))
-            .pipe(gulp.dest(`./${directory}/assets/js/core`));
-}
+// Main js move task
+gulp.task('js:move', gulp.series(jsMoveTask(), 'js:move-iqonic'));
 
-gulp.task('js-mini:libs', function() {
+// Build core library js task
+gulp.task('js:libs-mini', function() {
     const scripts = config.assets.js.core
+    const obj = gulpHelper.find(paths, 'default')
     if (scripts.length) {
-        return jsTask(scripts, 'libs.min.js')
+        return gulpHelper.jsBuild(scripts, obj.dir, 'libs.min.js')
     } else {
         return true
     }
 })
 
-gulp.task('js-mini:external-libs', function() {
+// Build external js task
+gulp.task('js:external-libs-mini', function() {
     const scripts = config.assets.js.external
+    const obj = gulpHelper.find(paths, 'default')
     if (scripts.length) {
-        return jsTask(scripts, 'external.min.js')
+        return gulpHelper.jsBuild(scripts, obj.dir, 'external.min.js')
     } else {
         return true
     }
 })
 
-gulp.task('js', gulp.series('js-move','js-mini:libs','js-mini:external-libs'))
+// Main js task & build core, external task
+gulp.task('js', gulp.series('js:move','js:libs-mini','js:external-libs-mini'))

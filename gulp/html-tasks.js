@@ -1,37 +1,33 @@
 const gulp = require('gulp')
-const config = require('../gulp.config.json')
-const handlebars = require('handlebars')
-const gulpHandlebars = require('gulp-compile-handlebars')
-const hbsLayouts = require('handlebars-layouts')
-const rename = require('gulp-rename')
-const {argv} = require('yargs')
-var package = require('../package.json');
-hbsLayouts.register(handlebars)
-let directory = argv.output
-let dev = argv.dev
-if (directory === undefined) {
-    directory = config.output
-}
+const gulpHelper = require('./helper')
 
-gulp.task('hbs', function () {
-	const options = {
-		ignorePartials: true,
-        batch: ['./src/templates/']
-    }
+// Module object
+const paths = gulpHelper.mergedModules()
 
-    const paths = [
-        'src/templates/pages/**/*.hbs',
-    ]
+// landing-pages hbs to html generate task
 
-    return gulp.src(paths).pipe(gulpHandlebars({
-            layout: config.layout,
-            dev: dev,
-            version: package.version,
-            appName: config.appName,
-            dark: config.dark,
-          },options)
-      ).pipe(rename({extname: ".html",})
-      ).pipe(gulp.dest(`./${directory}`));
+// Main hbs to html generate task
+gulp.task('hbs', () => {
+    const obj = gulpHelper.find(paths, 'default')
+    return gulpHelper.generateHtml(obj.pages, obj.dir)
 })
 
-gulp.task('html-hbs', gulp.series('hbs'));
+gulp.task('hbs:landing-pages', () => {
+    const obj = gulpHelper.find(paths, 'landing-pages')
+    return gulpHelper.generateHtml(obj.pages, obj.dir)
+})
+
+// Function for generate hbs to html task array based on module is generate or not
+function hbsTask() {
+    const task = ['hbs']
+    for (let index = 0; index < paths.length; index++) {
+        const object = paths[index];
+        if(object.generate) {
+            task.push(`hbs:${object.name}`)
+        }
+    }
+    return task
+}
+
+
+gulp.task('html-to-hbs', gulp.series(hbsTask()));

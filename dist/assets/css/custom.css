@@ -10,6 +10,14 @@
   outline: none;
 }
 
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+}
+
 .sign-bg {
   position: absolute;
   left: 0;
@@ -40,7 +48,6 @@
   .login-header {
     height: 12.5rem !important;
   }
-
   .login-bottom {
     margin-top: -6.25rem;
   }
@@ -126,7 +133,7 @@
   position: absolute;
   background: #3a57e8;
   padding: 9px 25px;
-  color: #fff;
+  color: #ffffff;
   top: -15px;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -159,7 +166,7 @@
   background: #3a57e8;
 }
 .prc-box.active .h3 {
-  color: #fff;
+  color: #ffffff;
 }
 .prc-box.active .type {
   background: #d8ddfa;
@@ -190,7 +197,7 @@
 }
 .line-around .line-around-1 {
   text-transform: uppercase;
-  background: #fff;
+  background: #ffffff;
   padding: 0 10px 0 0;
 }
 
@@ -256,7 +263,7 @@
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
@@ -264,7 +271,7 @@
 .main-img .container h1 {
   margin: 0;
   font-size: 4.375rem;
-  color: #fff;
+  color: #ffffff;
 }
 .main-img .container h1 span {
   padding: 0.375rem 0.875rem;
@@ -363,11 +370,9 @@
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: auto;
   }
-
   .bd-aside.sticky-xl-top {
     top: 2rem !important;
   }
-
   .bd-header {
     position: fixed;
     top: 0;
@@ -376,11 +381,9 @@
     z-index: 1030;
     grid-column: 1/span 3;
   }
-
   .sticky-xl-top {
     z-index: 2;
   }
-
   .bd-cheatsheet, .bd-cheatsheet section, .bd-cheatsheet article {
     display: grid;
     gap: 2rem;
@@ -388,17 +391,14 @@
     grid-column: span 2/span 2;
     grid-template-rows: auto;
   }
-
   .bd-aside {
     grid-area: 1/1;
     scroll-margin-top: 4rem;
   }
-
   .bd-cheatsheet section, .bd-cheatsheet section > .iq-side-content {
     top: 2rem;
     scroll-margin-top: 0;
   }
-
   .bd-cheatsheet article, .bd-cheatsheet .bd-heading {
     top: -webkit-calc(7.2rem + 2rem);
     top: calc(7.2rem + 2rem);
@@ -436,25 +436,21 @@
   .header .container {
     max-width: unset !important;
   }
-
   aside.mobile-offcanvas {
     margin-top: unset !important;
   }
   aside.mobile-offcanvas .offcanvas-header {
     display: block;
   }
-
   .body-class-1 {
     padding: unset;
   }
   .body-class-1.container {
     max-width: unset;
   }
-
   #content .iq-side-content .card {
     margin-top: 1.25rem;
   }
-
   .mobile-offcanvas {
     visibility: hidden;
     -webkit-transform: translateX(-100%);
@@ -476,11 +472,10 @@
     -o-transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
     transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
     transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-    background: #ffffffd6;
+    background: rgba(255, 255, 255, 0.8392156863);
     -webkit-backdrop-filter: blur(0.5rem);
             backdrop-filter: blur(0.5rem);
   }
-
   .mobile-offcanvas.show {
     visibility: visible;
     -webkit-transform: translateY(0);
@@ -495,11 +490,9 @@
   .bd-aside.card.iq-document-card, .bd-cheatsheet {
     margin-top: -3rem;
   }
-
   aside.mobile-offcanvas .offcanvas-header {
     display: none;
   }
-
   .bd-cheatsheet section .iq-side-content {
     grid-column-end: 3;
   }
@@ -559,7 +552,7 @@ body.uikit .btn-download {
   text-align: center;
   cursor: pointer;
   background: #3a57e8;
-  color: #fff;
+  color: #ffffff;
   padding: 0.2rem;
   -webkit-border-radius: 0 1rem 1rem 0;
           border-radius: 0 1rem 1rem 0;

@@ -1,9 +1,14 @@
+
 {
     "appName": "Hope UI",
     "output" : "dist",
     "mini": "false",
-    "dark": "false",
     "layout" : "layouts/dashboard/default",
+    "modules": [
+        {
+            "name": "landing-pages",
+            "generate": true
+        }],
     "assets": {
         "fonts": [
             "./src/assets/fonts/**/*.*"
@@ -23,14 +28,12 @@
                 "./node_modules/@popperjs/core/dist/umd/popper.min.js",
                 "./node_modules/bootstrap/dist/js/bootstrap.min.js",
                 "./node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js",
-                "./{directory}/assets/vendor/lodash/lodash.min.js",
                 "./node_modules/swiper/swiper-bundle.min.js"
             ],
             "external": [
                 "./node_modules/nouislider/distribute/nouislider.min.js",
-                "./node_modules/vanillajs-datepicker/dist/js/datepicker-full.js",
                 "./node_modules/smooth-scrollbar/dist/smooth-scrollbar.js",
-                "./{directory}/assets/js/plugins/circle-progress.js",
+                "./src/assets/js/plugins/circle-progress.js",
                 "./node_modules/apexcharts/dist/apexcharts.min.js",
                 "./node_modules/counterup2/dist/index.js",
                 "./src/assets/vendor/Leaflet/leaflet.js"

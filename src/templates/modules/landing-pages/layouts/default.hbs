@@ -1,0 +1,53 @@
+{{!-- layouts/layout.hbs --}}
+<!doctype html>
+<html lang="en" dir="ltr" class="landing-pages">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>{{ appName }} | Responsive Bootstrap 5 Admin Dashboard Template</title>
+      {{> partials/dashboard/head }}
+      {{> modules/landing-pages/components/partials/head }}
+      {{#block "head"}}
+        {{!-- External page head section--}}
+      {{/block}}
+  </head>
+  <body class="{{bodyClass}} body-bg landing-pages">
+    <span class="screen-darken"></span>
+    <!-- loader Start -->
+    <div id="loading">
+      {{> partials/dashboard/loader }}
+    </div>
+    <!-- loader END -->
+    <main class="main-content">
+      <div class="position-relative">
+        <!--Nav Start-->
+        {{#compare isHeader1 '==' 'true'}}
+          {{> modules/landing-pages/components/partials/header-1  }}
+        {{/compare}}
+         {{#compare isHeader2 '==' 'true'}}
+            {{> modules/landing-pages/components/partials/header-2  }}
+        {{/compare}}
+        <!--Nav End-->
+      </div>
+        {{#block "content"}}
+        {{/block}}
+
+    </main>
+    <!-- Wrapper End-->
+    <!--Footer start--->
+        {{#compare isFooter '==' 'true'}}
+          {{> modules/landing-pages/components/partials/footer  }}
+        {{/compare}}
+        {{#compare isFooter1 '==' 'true'}}
+            {{> modules/landing-pages/components/partials/footer-one  }}
+        {{/compare}}
+        {{#compare isFooter2 '==' 'true'}}
+            {{> modules/landing-pages/components/partials/footer-two  }}
+        {{/compare}}
+    <!--footer end--->
+    {{> partials/dashboard/scripts }}
+     {{> modules/landing-pages/components/partials/scripts  }}
+    {{#block "scripts"}}
+    {{/block}}
+  </body>
+</html>

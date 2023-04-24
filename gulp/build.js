@@ -3,9 +3,9 @@ const gulp = require('gulp')
 gulp.task('build', gulp.series([
     'clean',
     'style',
-    'html-hbs',
+    'html-to-hbs',
     'vendor',
     'js',
     'font',
-    'image'
+    'image-move'
 ]))

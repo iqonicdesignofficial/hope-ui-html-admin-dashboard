@@ -1,0 +1,44 @@
+// Configuration
+@import "../../../scss/bootstrap/functions";
+// Variables
+@import "../../../scss/hope-ui-design-system/variable";
+@import "../../../scss/hope-ui-design-system/variables/index";
+@import "../../../scss/bootstrap/variables";
+@import "../../../scss/bootstrap/mixins";
+
+
+@import "./components/root";
+
+// app landing
+@import "./components/app-landing/banner";
+@import "./components/app-landing/footer";
+@import "./components/app-landing/services";
+
+
+// ecommerce landing
+@import "./components/ecommerce-landing/testimonial";
+@import "./components/ecommerce-landing/client";
+
+// software landing
+@import "./components/software-landing/card";
+
+// sass landing
+@import "./components/sass-landing/services";
+
+// header
+@import "./components/header";
+
+// Scrollbar
+@import "./components/scrollbar";
+
+//shop
+@import "./components/shop/product-card";
+
+//startup landing 
+@import "./components/startup-landing/banner";
+
+//swiper landing 
+@import "./components/swiper";
+
+
+

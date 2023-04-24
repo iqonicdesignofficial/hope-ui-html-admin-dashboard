@@ -351,6 +351,4 @@ Index Of Script
         customizerMode(custombodyclass,colors,color)     
     }
 
-    
-
 })()

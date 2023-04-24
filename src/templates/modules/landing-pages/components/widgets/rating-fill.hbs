@@ -1,0 +1,11 @@
+{{#if @partial-block}}
+    {{> @partial-block }}
+{{else}}
+    {{#for 6}}
+        {{#compare ../rating '>=' this}}
+            {{> modules/landing-pages/components/widgets/rating-star fill="true"}}
+        {{else}}
+            {{> modules/landing-pages/components/widgets/rating-star}}
+        {{/compare}}
+    {{/for}}
+{{/if}}

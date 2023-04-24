@@ -1,0 +1,15 @@
+// @media screen and (max-width: 768px) {
+//     .title-top{
+//         margin-top: 0px;
+        
+//     }
+// }
+
+.contact-detail{
+    text-align: right;
+}
+@media screen and (max-width: 992px) {
+    .contact-detail{
+        text-align: center;
+    }
+}

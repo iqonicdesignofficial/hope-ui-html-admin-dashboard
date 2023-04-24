@@ -1,104 +1,66 @@
+'use strict';
 module.exports = function (browserSync) {
+  // Packages
   const gulp = require('gulp')
-  const sass = require('gulp-sass')(require('sass'));
-  const concat = require('gulp-concat')
-  const cleanCSS = require('gulp-clean-css')
-  const autoprefixer = require('gulp-autoprefixer')
   const {argv} = require('yargs')
   const config = require('../gulp.config.json')
-  const sourcemaps = require('gulp-sourcemaps')
-  const gulpRename = require("gulp-rename")
+  const gulpHelper = require('./helper')
 
-  let directory = argv.output
+  // const paths = gulpHelper.modulesOptions
+
+  const paths = gulpHelper.mergedModules()
+
+
   let dev = argv.dev
-  let mini = argv.mini
-  if (directory === undefined) {
-      directory = config.output
-  }
-  if (mini === undefined) {
-      mini = config.mini
-  }
-  const AUTOPREFIXER_BROWSERS = [
-    "ie >= 10",
-    "ie_mob >= 10",
-    "ff >= 30",
-    "chrome >= 34",
-    "safari >= 7",
-    "opera >= 23",
-    "ios >= 7",
-    "android >= 4.4",
-    "bb >= 10",
-    "last 30 versions",
-  ];
-  function styleTaskDev(styles){
-      let paths = []
-      styles.forEach((css) => {
-          paths.push(css.replace('{directory}', directory))
-      })
 
-      return gulp
-        .src(paths)
-        .pipe(sourcemaps.init())
-        .pipe(
-          sass.sync({
-            includePaths: ["./node_modules"],
-            outputStyle: "compressed",
-          }).on("error", sass.logError)
-        )
-        .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulpRename({extname: ".min.css",}))
-        .pipe(sourcemaps.write("./maps"))
-        .pipe(gulp.dest(`./${directory}/assets/css/`))
-        .pipe(browserSync.stream());
+  function scsstask(obj) {
+    return gulpHelper.generateScss(obj.scss, obj.dir)
   }
 
-  function styleTask(styles) {
-      let paths = []
-      styles.forEach((css) => {
-          paths.push(css.replace('{directory}', directory))
-      })
-      return gulp
-        .src(paths)
-        .pipe(
-          sass({
-            includePaths: ["./node_modules"],
-          }).on("error", sass.logError)
-        )
-        .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulp.dest(`./${directory}/assets/css/`));
-      
+  function scsstaskDev(obj) {
+    return gulpHelper.generateScssDev(obj.scss, obj.dir, browserSync);
   }
 
-  gulp.task('style:main', function (bs) {
-      let styles = ['./src/assets/scss/**/*.scss'];
+  gulp.task('style:main', function () {
+    const obj = gulpHelper.find(paths, 'default')
       if (dev == 'true') {
-          return styleTaskDev(styles)
+        return scsstaskDev(obj)
       } else { 
-          styleTaskDev(styles)
-          return styleTask(styles)
+        scsstaskDev(obj)
+        return scsstask(obj)
       }
   })
 
-  gulp.task('style:libs', function(){
-      let styles = config.assets.style;
-      let paths = []
-      styles.forEach((css) => {
-          paths.push(css.replace('{directory}', directory))
-      })
-
-      return gulp
-        .src(paths)
-        .pipe(
-          sass.sync({
-            includePaths: ["./node_modules"],
-            outputStyle: "compressed",
-          }).on("error", sass.logError)
-        )
-        .pipe(cleanCSS())
-        .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(concat("libs.min.css"))
-        .pipe(gulp.dest(`./${directory}/assets/css/core`));
+  gulp.task('style:landing-pages', function () {
+    const obj = gulpHelper.find(paths, 'landing-pages')
+      if (dev == 'true') {
+        return scsstaskDev(obj)
+      } else { 
+        scsstaskDev(obj)
+        return scsstask(obj)
+      }
   })
 
-  gulp.task('style', gulp.series('style:libs','style:main'));
+
+  // function for generate js move task array based on module is generate or not
+function scssTocssTask() {
+  const task = ['style:main']
+  for (let index = 0; index < paths.length; index++) {
+      const object = paths[index];
+      if(object.generate) {
+          task.push(`style:${object.name}`)
+      }
+  }
+  return task
+}
+
+  // Main js move task
+  gulp.task('style:tasks', gulp.series(scssTocssTask()));
+
+  gulp.task('style:libs', function(){
+      const obj = gulpHelper.find(paths, 'default')
+      return gulpHelper.cssBuild(config.assets.style, obj.dir);
+  })
+
+  gulp.task('style', gulp.series('style:libs','style:tasks'));
 }

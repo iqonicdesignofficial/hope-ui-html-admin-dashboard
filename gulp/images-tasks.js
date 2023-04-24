@@ -1,21 +1,33 @@
+'use strict';
+// Packages
 const gulp = require("gulp");
-const config = require("../gulp.config.json");
-const imagemin = require("gulp-imagemin");
-const { argv } = require("yargs");
-const gulpIf = require("gulp-if");
+const gulpHelper = require('./helper')
+const paths = gulpHelper.mergedModules()
 
-gulp.task("image", function () {
-  let directory = argv.output;
-  let mini = argv.mini
-  let path = [`./src/assets/images/**/*.*`];
-  if (directory === undefined) {
-    directory = config.output;
+// Main Move task
+gulp.task("images-move-main", () => {
+  const obj = gulpHelper.find(paths, 'default')
+  return gulpHelper.moveImages(obj.images, obj.dir)
+})
+
+// Appointment js move task
+gulp.task('images-move-landing-pages', () => {
+  const obj = gulpHelper.find(paths, 'landing-pages')
+  return gulpHelper.moveImages(obj.images, obj.dir)
+})
+
+
+// function for move images task array based on module is generate or not
+function imagesTask() {
+  const task = ['images-move-main']
+  for (let index = 0; index < paths.length; index++) {
+      const object = paths[index];
+      if(object.generate) {
+          task.push(`images-move-${object.name}`)
+      }
   }
-  if (mini === undefined) {
-      mini = config.mini
-  }
-  return gulp
-    .src(path)
-    .pipe(gulpIf(mini == "true", imagemin()))
-    .pipe(gulp.dest(`./${directory}/assets/images`));
-});
+  return task
+}
+
+// Images main task
+gulp.task("image-move", gulp.series(imagesTask()));

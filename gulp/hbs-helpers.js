@@ -60,3 +60,10 @@ handlebars.registerHelper('outArray', function (val, arr, options) {
     }
     return options.fn(this);
 });
+
+handlebars.registerHelper('for', function(n, block) {
+    var accum = '';
+    for(var i = 1; i < n; ++i)
+        accum += block.fn(i);
+    return accum;
+})

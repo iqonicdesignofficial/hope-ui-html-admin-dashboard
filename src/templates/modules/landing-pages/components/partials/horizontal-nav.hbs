@@ -1,0 +1,54 @@
+<!-- Horizontal Menu Start -->
+<nav id="navbar_main" class="mobile-offcanvas nav navbar navbar-expand-xl hover-nav horizontal-nav">
+<div class="container-fluid p-lg-0">
+   <div class="offcanvas-header px-0">
+      <div class="navbar-brand ms-3">
+         {{> partials/components/logo color="true"}}
+         <h5 class="logo-title">{{ appName }}</h5>
+      </div>
+      <button class="btn-close float-end px-3"></button>
+   </div>
+  <ul class="navbar-nav " id="header-menu">
+      <li class="nav-item">
+          <a class="nav-link">
+              <span class="item-name">Home</span>
+          </a>
+          <ul class="sub-nav collapse">
+              <li class="nav-item">
+                  <a class="nav-link {{#compare active '==' 'index'}}active{{/compare}}" href="{{path}}landing-pages/index.html">
+                    App Landing Page
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link {{#compare active '==' 'ecommerce-landing-page'}}active{{/compare}}" href="{{path}}dashboard/ecommerce-landing-page.html">
+                    Ecommerce Landing Page
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link {{#compare active '==' 'saas-marketing-landing-page'}}active{{/compare}}" href="{{path}}dashboard/saas-marketing-landing-page.html">
+                    Saas Marketing Landing Page
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link {{#compare active '==' 'software-landing-page'}}active{{/compare}}" href="{{path}}dashboard/software-landing-page.html">
+                      Software Landing Page
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link {{#compare active '==' 'startup-landing-page'}}active{{/compare}}" href="{{path}}dashboard/startup-landing-page.html">
+                    Startup Landing Page
+                  </a>
+              </li>
+          </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link {{#compare active '==' 'about'}}active{{/compare}}" href="{{path}}landing-pages/about.html">About Us </a></li>
+      <li class="nav-item"><a class="nav-link {{#compare active '==' 'feature'}}active{{/compare}}" href="{{path}}landing-pages/feature.html"> Features </a></li>
+      <li class="nav-item"><a class="nav-link {{#compare active '==' 'pricing'}}active{{/compare}}" href="{{path}}landing-pages/pricing.html">Pricing</a></li>
+      <li class="nav-item d-xl-none"><a class="nav-link {{#compare active '==' 'blog'}}active{{/compare}}" href="{{path}}landing-pages/blog.html">Blog</a></li>
+      <li class="nav-item d-xl-none"><a class="nav-link {{#compare active '==' 'shop'}}active{{/compare}}" href="{{path}}landing-pages/shop.html"> Shop</a></li>
+      <li class="nav-item d-xl-none"><a class="nav-link {{#compare active '==' 'faq'}}active{{/compare}}" href="{{path}}landing-pages/faq.html">Faq</a></li>
+      <li class="nav-item d-xl-none"><a class="nav-link {{#compare active '==' 'contact-us'}}active{{/compare}}" href="{{path}}landing-pages/contact-us.html">Contact Us</a></li>
+   </ul>
+</div> <!-- container-fluid.// -->
+</nav>
+<!-- Sidebar Menu End -->

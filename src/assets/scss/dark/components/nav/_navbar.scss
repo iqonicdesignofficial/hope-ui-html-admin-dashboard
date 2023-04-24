@@ -1,5 +1,5 @@
 .nav{
-    background: $body-bg;
+    background: $card-bg;
     .navbar-brand {
 		.logo-title {
 			color: $white;
@@ -9,11 +9,17 @@
 .iq-navbar {
     border-color: $card-bg;
     background-color: $card-bg;
-
-    @include nav-item(false) {
-        color: $white;
-        &:hover {
-            color: tint-color($body-color, 40%);
+    .navbar-nav{
+        .nav-item{
+            .nav-link{
+                color: $white;
+                &:hover {
+                    color: tint-color($body-color, 40%);
+                }
+                &.active{
+                    color: var(--#{$variable-prefix}primary);
+                }
+            }
         }
     }
 	.navbar-brand {
