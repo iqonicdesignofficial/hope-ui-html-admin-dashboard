@@ -11,7 +11,7 @@ if ($('#app-slider').length > 0) {
             991: { slidesPerView: 3 },
             1400: { slidesPerView: 3 },
             1500: { slidesPerView: 3 },
-            1920: { slidesPerView: 4 },
+            1920: { slidesPerView: 3 },
             2040: { slidesPerView: 4 },
             2440: { slidesPerView: 4 }
         },
@@ -156,3 +156,23 @@ if ($('#testimonial-slider-two').length > 0) {
     })
 }
 
+  /*------------Minus-plus--------------*/
+  const plusBtns = document.querySelectorAll('.iq-quantity-plus')
+  const minusBtns = document.querySelectorAll('.iq-quantity-minus')
+  const updateQtyBtn = (elem, value) => {
+    const oldValue = elem.closest('[data-qty="btn"]').querySelector('[data-qty="input"]').value
+    const newValue = Number(oldValue) + Number(value)
+    if (newValue >= 1) {
+      elem.closest('[data-qty="btn"]').querySelector('[data-qty="input"]').value = newValue
+    }
+  }
+  Array.from(plusBtns, (elem) => {
+    elem.addEventListener('click', (e) => {
+      updateQtyBtn(elem, 1)
+    })
+  })
+  Array.from(minusBtns, (elem) => {
+    elem.addEventListener('click', (e) => {
+      updateQtyBtn(elem, -1)
+    })
+  })

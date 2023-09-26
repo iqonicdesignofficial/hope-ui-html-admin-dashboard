@@ -9,36 +9,19 @@
 
 @import "./components/root";
 
-// app landing
-@import "./components/app-landing/banner";
-@import "./components/app-landing/footer";
-@import "./components/app-landing/services";
+//landing Pages
+@import "./components/widgets/banner";
+@import "./components/widgets/footer";
+@import "./components/widgets/services";
 
+@import "./components/widgets/testimonial";
+@import "./components/widgets/client";
 
-// ecommerce landing
-@import "./components/ecommerce-landing/testimonial";
-@import "./components/ecommerce-landing/client";
+@import "./components/widgets/card";
 
-// software landing
-@import "./components/software-landing/card";
+@import "./components/widgets/header";
 
-// sass landing
-@import "./components/sass-landing/services";
-
-// header
-@import "./components/header";
-
-// Scrollbar
-@import "./components/scrollbar";
-
-//shop
-@import "./components/shop/product-card";
-
-//startup landing 
-@import "./components/startup-landing/banner";
-
-//swiper landing 
-@import "./components/swiper";
+@import "./components/widgets/swiper";
 
 
 

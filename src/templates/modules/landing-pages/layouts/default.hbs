@@ -1,4 +1,3 @@
-{{!-- layouts/layout.hbs --}}
 <!doctype html>
 <html lang="en" dir="ltr" class="landing-pages">
   <head>
@@ -8,33 +7,33 @@
       {{> partials/dashboard/head }}
       {{> modules/landing-pages/components/partials/head }}
       {{#block "head"}}
-        {{!-- External page head section--}}
+        {{!-- External-page-head-section --}}
       {{/block}}
   </head>
   <body class="{{bodyClass}} body-bg landing-pages">
     <span class="screen-darken"></span>
-    <!-- loader Start -->
+    <!-- loader-Start -->
     <div id="loading">
       {{> partials/dashboard/loader }}
     </div>
-    <!-- loader END -->
+    <!-- loader-END -->
+    <!-- Wrapper-start -->
     <main class="main-content">
       <div class="position-relative">
-        <!--Nav Start-->
+        <!-- Nav-Start -->
         {{#compare isHeader1 '==' 'true'}}
           {{> modules/landing-pages/components/partials/header-1  }}
         {{/compare}}
          {{#compare isHeader2 '==' 'true'}}
             {{> modules/landing-pages/components/partials/header-2  }}
         {{/compare}}
-        <!--Nav End-->
+        <!--Nav-End-->
       </div>
         {{#block "content"}}
         {{/block}}
-
     </main>
-    <!-- Wrapper End-->
-    <!--Footer start--->
+    <!-- Wrapper-End -->
+    <!-- Footer-start -->
         {{#compare isFooter '==' 'true'}}
           {{> modules/landing-pages/components/partials/footer  }}
         {{/compare}}
@@ -44,7 +43,21 @@
         {{#compare isFooter2 '==' 'true'}}
             {{> modules/landing-pages/components/partials/footer-two  }}
         {{/compare}}
-    <!--footer end--->
+    <!-- Footer-end -->
+     {{!-- Back-To-Top --}}
+    <div id ="back-to-top" style="display: none;">
+        <a class="p-0 btn btn-primary btn-sm position-fixed top" id="top" href="#top">
+            <svg class="icon-30" width="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15.5L12 8.5L19 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </a>
+    </div>
+    {{!-- Back-To-end --}}
+     <a class="btn btn-fixed-end btn-primary btn-icon btn-landing" href="{{path}}dashboard/index.html">
+      Dashboard Demo
+    </a>
+
+      <!-- offcanvas start -->
     {{> partials/dashboard/scripts }}
      {{> modules/landing-pages/components/partials/scripts  }}
     {{#block "scripts"}}
